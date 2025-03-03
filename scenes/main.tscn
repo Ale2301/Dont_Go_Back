@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://bk2es1e43h01v"]
 
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_uw8se"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_uw8se"]
 [ext_resource type="PackedScene" uid="uid://dsn23pn5ecvjq" path="res://scenes/StreetSceneInstance.tscn" id="2_yue7m"]
 [ext_resource type="PackedScene" uid="uid://faqqu8oh31xy" path="res://scenes/player.tscn" id="3_0ueof"]
-[ext_resource type="Script" path="res://scenes/Camera_Movement.gd" id="4_slnx7"]
-[ext_resource type="Script" path="res://scenes/Node3D.gd" id="5_l42jh"]
+[ext_resource type="Script" path="res://scripts/Camera_Movement.gd" id="4_slnx7"]
+[ext_resource type="Script" path="res://scripts/Node3D.gd" id="5_l42jh"]
 [ext_resource type="PackedScene" uid="uid://d0x2dhf6w6lpq" path="res://scenes/HUD.tscn" id="6_crirl"]
 [ext_resource type="PackedScene" uid="uid://mtnidfurnuj5" path="res://textures/Farola.fbx" id="7_57bfg"]
 
