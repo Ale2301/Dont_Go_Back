@@ -1,15 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1h8pyt6fe72v"]
+[gd_scene load_steps=11 format=3 uid="uid://b1h8pyt6fe72v"]
 
+[ext_resource type="Script" path="res://main.gd" id="1_007es"]
 [ext_resource type="PackedScene" uid="uid://dnwemi4jcnp38" path="res://StreetSceneInstance.tscn" id="1_cpur7"]
 [ext_resource type="PackedScene" uid="uid://faqqu8oh31xy" path="res://player.tscn" id="1_w2fl4"]
 [ext_resource type="Script" path="res://Camera_Movement.gd" id="2_u0px2"]
 [ext_resource type="PackedScene" uid="uid://d0x2dhf6w6lpq" path="res://HUD.tscn" id="3_3aivi"]
+[ext_resource type="Script" path="res://Node3D.gd" id="5_xoa5f"]
+[ext_resource type="PackedScene" uid="uid://mtnidfurnuj5" path="res://Farola.fbx" id="7_jqvu2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yuxok"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lffgm"]
 
+[sub_resource type="Environment" id="Environment_8vxwo"]
+fog_enabled = true
+fog_light_color = Color(0.275795, 0.301719, 0.342471, 1)
+fog_light_energy = 0.32
+fog_density = 0.2996
+volumetric_fog_density = 0.1342
+
 [node name="Main" type="Node"]
+script = ExtResource("1_007es")
 
 [node name="FloorSpriteHandler" type="Node3D" parent="."]
 
@@ -72,8 +83,17 @@ shape = SubResource("BoxShape3D_yuxok")
 transform = Transform3D(1.02583, 0, 0, 0, 1.02583, 0, 0, 0, 1.02583, 79.241, 0.712036, -0.063)
 
 [node name="PlayerCamera" type="Camera3D" parent="Player"]
-transform = Transform3D(0.0806392, -0.00221028, 0.971479, 0.00185361, 0.974818, 0.00206402, -0.971479, 0.00167652, 0.0806431, 0.00495911, 0.76132, 0.000971846)
+transform = Transform3D(-4.26108e-08, 0, 0.974823, 0, 0.974822, 0, -0.974822, 0, -4.26108e-08, 0.00495911, 0.76132, 0.000971846)
 script = ExtResource("2_u0px2")
+
+[node name="LightRotation" type="Node3D" parent="Player"]
+script = ExtResource("5_xoa5f")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Player/LightRotation"]
+transform = Transform3D(-0.00668198, -0.184852, 0.95711, -0.0012905, 0.957134, 0.184847, -0.974797, -2.26974e-10, -0.00680546, -0.363899, 0.343648, 0)
+light_energy = 16.0
+spot_range = 7.45678
+spot_angle = 30.6485
 
 [node name="PlaceholderThings" type="StaticBody3D" parent="."]
 transform = Transform3D(1.02939, 0, 0, 0, 1.02939, 0, 0, 0, 1.02939, 84.1556, 2.71483, -0.0712345)
@@ -126,5 +146,14 @@ mesh = SubResource("CylinderMesh_lffgm")
 
 [node name="PlayerHUD" parent="." instance=ExtResource("3_3aivi")]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.997579, 0.0693928, 0.00459472, -0.0123198, 0.111311, 0.993709, 0.0684449, -0.99136, 0.111896, 76.3536, 7.34076, 0.441722)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8vxwo")
+
+[node name="Farola" parent="." instance=ExtResource("7_jqvu2")]
+transform = Transform3D(0.00993272, 0, 0.971172, 0, 0.577465, 0, -0.600264, 0, 0.0160702, 64.1455, 0, -19.7102)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Farola"]
+transform = Transform3D(0.0269563, 1.63392, 0.322725, -0.00337291, -0.335502, 1.69889, 1.02941, -0.016734, -0.00126095, -0.0542712, 3.87625, 1.51175)
+light_energy = 11.182
+light_indirect_energy = 1.323
+light_size = 0.162

@@ -30,3 +30,5 @@ func _physics_process(delta):
 	
 	if global_transform.origin.x <= teleport_limit_x:
 		global_transform.origin.x = teleport_target_x
+
+
