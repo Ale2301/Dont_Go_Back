@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vtrp8a75wc6"
-path="res://.godot/imported/HUD_de_Camara.png-ef2e1a6a3fe2f98d89788a040e8b937c.ctex"
+uid="uid://dhdcvbq6juvtb"
+path="res://.godot/imported/Streetlight_uv2 roughness.png-0d5a195ecd5bf7b50e4d6f5533ff56e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://HUD_de_Camara.png"
-dest_files=["res://.godot/imported/HUD_de_Camara.png-ef2e1a6a3fe2f98d89788a040e8b937c.ctex"]
+source_file="res://textures/Farola.fbm/Streetlight_uv2 roughness.png"
+dest_files=["res://.godot/imported/Streetlight_uv2 roughness.png-0d5a195ecd5bf7b50e4d6f5533ff56e4.ctex"]
 
 [params]
 

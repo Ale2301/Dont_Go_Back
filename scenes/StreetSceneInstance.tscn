@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dnwemi4jcnp38"]
+[gd_scene load_steps=7 format=3 uid="uid://dsn23pn5ecvjq"]
 
 [ext_resource type="PackedScene" uid="uid://r4sa87ke8s4" path="res://textures/Calle.fbx" id="1_larvg"]
 [ext_resource type="Texture2D" uid="uid://dstgnvhe23hyj" path="res://textures/Calle/highway uv1 base_color.png" id="2_mxd2d"]

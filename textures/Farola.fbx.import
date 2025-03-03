@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://mtnidfurnuj5"
-path="res://.godot/imported/Farola.fbx-042b81e4f7e584c6ec85fc00a593c2ac.scn"
+path="res://.godot/imported/Farola.fbx-8f2e50cb94e4486164435a90d448e248.scn"
 
 [deps]
 
-source_file="res://Farola.fbx"
-dest_files=["res://.godot/imported/Farola.fbx-042b81e4f7e584c6ec85fc00a593c2ac.scn"]
+source_file="res://textures/Farola.fbx"
+dest_files=["res://.godot/imported/Farola.fbx-8f2e50cb94e4486164435a90d448e248.scn"]
 
 [params]
 
