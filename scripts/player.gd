@@ -7,12 +7,12 @@ extends CharacterBody3D
 @export var teleport_target_x = 79.24
 
 
-var target_velocity = Vector3.ZERO
+
 
 
 func _physics_process(delta):
 	var direction = Vector3.ZERO
-
+	var target_velocity = Vector3.ZERO
 	if Input.is_action_pressed("move_forward"):
 		direction = -transform.basis.x
 	if direction.length() > 0:
