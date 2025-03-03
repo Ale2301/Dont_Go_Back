@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0x2dhf6w6lpq"]
+
+[ext_resource type="Texture2D" uid="uid://vtrp8a75wc6" path="res://HUD_de_Camara.png" id="1_u2n4b"]
+
+[node name="HUD" type="CanvasLayer"]
+editor_description = "
+"
+
+[node name="HudDeCamara" type="Sprite2D" parent="."]
+position = Vector2(639, 358.5)
+scale = Vector2(0.668359, 0.667593)
+texture = ExtResource("1_u2n4b")

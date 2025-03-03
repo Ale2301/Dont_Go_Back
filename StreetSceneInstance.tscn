@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnwemi4jcnp38"]
+
+[ext_resource type="PackedScene" uid="uid://r4sa87ke8s4" path="res://textures/Calle.fbx" id="1_larvg"]
+[ext_resource type="Texture2D" uid="uid://dstgnvhe23hyj" path="res://textures/Calle/highway uv1 base_color.png" id="2_mxd2d"]
+[ext_resource type="Texture2D" uid="uid://cowkkouuayi2c" path="res://textures/Calle/highway uv1 metallic.png" id="3_qlyug"]
+[ext_resource type="Texture2D" uid="uid://dhui0cu16jml3" path="res://textures/Calle/highway uv1 normal.png" id="4_gbgug"]
+[ext_resource type="Texture2D" uid="uid://ckbcmoufpb1bc" path="res://textures/Calle/highway uv1 roughness.png" id="5_3vlps"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yyl8n"]
+albedo_texture = ExtResource("2_mxd2d")
+metallic = 1.0
+metallic_texture = ExtResource("3_qlyug")
+roughness_texture = ExtResource("5_3vlps")
+normal_enabled = true
+normal_texture = ExtResource("4_gbgug")
+
+[node name="Root Scene" instance=ExtResource("1_larvg")]
+
+[node name="street1" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yyl8n")

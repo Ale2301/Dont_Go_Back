@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://b1h8pyt6fe72v"]
+
+[ext_resource type="PackedScene" uid="uid://dnwemi4jcnp38" path="res://StreetSceneInstance.tscn" id="1_cpur7"]
+[ext_resource type="PackedScene" uid="uid://faqqu8oh31xy" path="res://player.tscn" id="1_w2fl4"]
+[ext_resource type="Script" path="res://Camera_Movement.gd" id="2_u0px2"]
+[ext_resource type="PackedScene" uid="uid://d0x2dhf6w6lpq" path="res://HUD.tscn" id="3_3aivi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yuxok"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lffgm"]
+
+[node name="Main" type="Node"]
+
+[node name="FloorSpriteHandler" type="Node3D" parent="."]
+
+[node name="FloorInstance" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 78.0098, 0, 0)
+
+[node name="FloorInstance2" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 71.5098, 0, 0)
+
+[node name="FloorInstance3" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 64.9814, 0, 0)
+
+[node name="FloorInstance4" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 58.4814, 0, 0)
+
+[node name="FloorInstance5" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 52.0132, 0, 0)
+
+[node name="FloorInstance6" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 45.5132, 0, 0)
+
+[node name="FloorInstance7" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 38.9848, 0, 0)
+
+[node name="FloorInstance8" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 32.4848, 0, 0)
+
+[node name="FloorInstance9" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 25.9935, 0, 0)
+
+[node name="FloorInstance10" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 19.4935, 0, 0)
+
+[node name="FloorInstance11" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.9652, 0, 0)
+
+[node name="FloorInstance12" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.46517, 0, 0)
+
+[node name="FloorInstance13" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.00309181, 0, 0)
+
+[node name="FloorInstance14" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.50309, 0, 0)
+
+[node name="FloorInstance15" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -13.0314, 0, 0)
+
+[node name="FloorInstance16" parent="FloorSpriteHandler" instance=ExtResource("1_cpur7")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.5314, 0, 0)
+
+[node name="FloorCollider" type="StaticBody3D" parent="."]
+transform = Transform3D(162.738, 0, 0, 0, 0.0287292, 0, 0, 0, 1.54428, 0, 0, 0)
+
+[node name="FloorCollider" type="CollisionShape3D" parent="FloorCollider"]
+transform = Transform3D(1, 0, 0, 0.000106812, 1, 0, 0, 0, 0.999996, 0.00222452, -0.419203, 0.131907)
+shape = SubResource("BoxShape3D_yuxok")
+
+[node name="Player" parent="." instance=ExtResource("1_w2fl4")]
+transform = Transform3D(1.02583, 0, 0, 0, 1.02583, 0, 0, 0, 1.02583, 79.241, 0.712036, -0.063)
+
+[node name="PlayerCamera" type="Camera3D" parent="Player"]
+transform = Transform3D(0.0806392, -0.00221028, 0.971479, 0.00185361, 0.974818, 0.00206402, -0.971479, 0.00167652, 0.0806431, 0.00495911, 0.76132, 0.000971846)
+script = ExtResource("2_u0px2")
+
+[node name="PlaceholderThings" type="StaticBody3D" parent="."]
+transform = Transform3D(1.02939, 0, 0, 0, 1.02939, 0, 0, 0, 1.02939, 84.1556, 2.71483, -0.0712345)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlaceholderThings"]
+mesh = SubResource("CylinderMesh_lffgm")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="PlaceholderThings"]
+transform = Transform3D(0.999299, 0.0325133, -0.0185898, -0.0318805, 0.998934, 0.0333762, 0.019655, -0.0327601, 0.99927, 5.15901, 0.556553, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlaceholderThings/StaticBody3D2"]
+mesh = SubResource("CylinderMesh_lffgm")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="PlaceholderThings/StaticBody3D2"]
+transform = Transform3D(0.999299, 0.0325133, -0.0185898, -0.0318806, 0.998935, 0.0333763, 0.019655, -0.0327601, 0.999271, -2.15973, -0.340809, -2.5908)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlaceholderThings/StaticBody3D2/StaticBody3D2"]
+mesh = SubResource("CylinderMesh_lffgm")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="PlaceholderThings/StaticBody3D2/StaticBody3D2"]
+transform = Transform3D(0.999299, 0.0325133, -0.0185898, -0.0318805, 0.998934, 0.0333762, 0.019655, -0.0327602, 0.99927, -0.57182, -0.12193, 4.3019)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlaceholderThings/StaticBody3D2/StaticBody3D2/StaticBody3D2"]
+mesh = SubResource("CylinderMesh_lffgm")
+
+[node name="PlaceholderThings2" type="StaticBody3D" parent="."]
+transform = Transform3D(1.02939, 0, 0, 0, 1.02939, 0, 0, 0, 1.02939, 84.1575, 2.86159, 19.2995)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlaceholderThings2"]
+mesh = SubResource("CylinderMesh_lffgm")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="PlaceholderThings2"]
+transform = Transform3D(0.999299, 0.0325133, -0.0185898, -0.0318805, 0.998934, 0.0333762, 0.019655, -0.0327601, 0.99927, 5.15901, 0.556553, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlaceholderThings2/StaticBody3D2"]
+mesh = SubResource("CylinderMesh_lffgm")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="PlaceholderThings2/StaticBody3D2"]
+transform = Transform3D(0.999299, 0.0325133, -0.0185898, -0.0318806, 0.998935, 0.0333763, 0.019655, -0.0327601, 0.999271, -2.15973, -0.340809, -2.5908)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlaceholderThings2/StaticBody3D2/StaticBody3D2"]
+transform = Transform3D(1, 8.63802e-08, -2.98023e-08, -2.77068e-08, 1, 2.98023e-08, 1.49012e-08, -1.49012e-08, 1, -83.0686, -1.59264, 4.65779)
+mesh = SubResource("CylinderMesh_lffgm")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="PlaceholderThings2/StaticBody3D2/StaticBody3D2"]
+transform = Transform3D(0.999299, 0.0325133, -0.0185898, -0.0318805, 0.998934, 0.0333762, 0.019655, -0.0327602, 0.99927, -0.57182, -0.12193, 4.3019)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlaceholderThings2/StaticBody3D2/StaticBody3D2/StaticBody3D2"]
+mesh = SubResource("CylinderMesh_lffgm")
+
+[node name="PlayerHUD" parent="." instance=ExtResource("3_3aivi")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.997579, 0.0693928, 0.00459472, -0.0123198, 0.111311, 0.993709, 0.0684449, -0.99136, 0.111896, 76.3536, 7.34076, 0.441722)
