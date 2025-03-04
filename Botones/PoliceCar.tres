@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ev2qqc81pn7b"]
+
+[ext_resource type="Texture2D" uid="uid://bygwyvt03vbbu" path="res://Botones/PoliceCar/PoliceCarBase/PoliceCar_Base_Color.png" id="1_db75y"]
+
+[resource]
+resource_name = "PoliceCar"
+albedo_texture = ExtResource("1_db75y")
+roughness = 0.0

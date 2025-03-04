@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://30u2dtnmw38p"]
+
+[ext_resource type="PackedScene" uid="uid://mtnidfurnuj5" path="res://textures/Farola.fbx" id="1_oapqk"]
+[ext_resource type="Texture2D" uid="uid://kgj038jnxahe" path="res://Farola.fbm/Streetlight_uv2 metalic.png" id="2_w4hkp"]
+[ext_resource type="Texture2D" uid="uid://bg7w6okw0pexu" path="res://Farola.fbm/Streetlight_uv2 normal.png" id="3_c0vm7"]
+[ext_resource type="Texture2D" uid="uid://dunl1cr7bxndr" path="res://Farola.fbm/Streetlight_uv2 roughness.png" id="4_28m5j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00k8r"]
+metallic = 1.0
+metallic_texture = ExtResource("2_w4hkp")
+roughness_texture = ExtResource("4_28m5j")
+normal_enabled = true
+normal_texture = ExtResource("3_c0vm7")
+
+[node name="Root Scene" instance=ExtResource("1_oapqk")]
+
+[node name="farola" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_00k8r")
