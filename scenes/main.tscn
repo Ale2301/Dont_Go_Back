@@ -20,7 +20,7 @@ fog_light_energy = 0.32
 fog_density = 0.2996
 volumetric_fog_density = 0.1342
 
-[sub_resource type="BoxMesh" id="BoxMesh_2pgmn"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_p4rhr"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_uw8se")
@@ -162,9 +162,8 @@ light_indirect_energy = 1.323
 light_size = 0.162
 
 [node name="EnemyStalker" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.57127)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.23543, 1.91322, 73.233)
 script = ExtResource("8_6mi7y")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyStalker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.1799, 0, 72.8719)
-mesh = SubResource("BoxMesh_2pgmn")
+mesh = SubResource("CapsuleMesh_p4rhr")
