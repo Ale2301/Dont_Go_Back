@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cbfth0aqipmff"]
+
+[ext_resource type="Texture2D" uid="uid://0jfnfnl318kn" path="res://Botones/PoliceCar/Siren/Siren_Base_Color.png" id="1_bkhwl"]
+
+[resource]
+resource_name = "Car_Siren"
+albedo_texture = ExtResource("1_bkhwl")
+roughness = 0.0
