@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=27 format=3 uid="uid://bk2es1e43h01v"]
+
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uw8se"]
 [ext_resource type="PackedScene" uid="uid://dsn23pn5ecvjq" path="res://scenes/StreetSceneInstance.tscn" id="2_yue7m"]
@@ -7,6 +9,7 @@
 [ext_resource type="Script" path="res://scripts/Node3D.gd" id="5_l42jh"]
 [ext_resource type="AudioStream" uid="uid://dpvdl2ipas8ha" path="res://Sonidos-Musica/PasosDelPersonajeJugable.ogg" id="6_40tra"]
 [ext_resource type="PackedScene" uid="uid://d0x2dhf6w6lpq" path="res://scenes/HUD.tscn" id="6_crirl"]
+
 [ext_resource type="Script" path="res://scenes/HUD.gd" id="7_vsadh"]
 [ext_resource type="PackedScene" uid="uid://30u2dtnmw38p" path="res://Farola.tscn" id="7_x74ja"]
 [ext_resource type="Script" path="res://Farola.gd" id="8_s3a4p"]
@@ -19,6 +22,7 @@
 [ext_resource type="Script" path="res://scenes/AudioStreamPlayer3D-IRONS.gd" id="15_ysvn8"]
 [ext_resource type="AudioStream" uid="uid://sfxve3ic2k2s" path="res://Sonidos-Musica/Buho.ogg" id="16_k31g2"]
 [ext_resource type="Script" path="res://scenes/AudioStreamPlayer3D-OWL.gd" id="17_2vohe"]
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yuxok"]
 
@@ -52,6 +56,8 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.8197
 volumetric_fog_albedo = Color(0, 0, 0, 1)
 volumetric_fog_length = 100.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_p4rhr"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_uw8se")
@@ -253,6 +259,7 @@ light_energy = 100.0
 light_indirect_energy = 1.323
 light_size = 0.162
 
+
 [node name="Timer" type="Timer" parent="Farola"]
 autostart = true
 
@@ -296,3 +303,4 @@ autostart = true
 [connection signal="timeout" from="Farola/Timer" to="Farola" method="_on_timer_timeout"]
 [connection signal="timeout" from="AudioStreamPlayer3D-IRONS/Timer" to="AudioStreamPlayer3D-IRONS" method="_on_timer_timeout"]
 [connection signal="timeout" from="AudioStreamPlayer3D-OWL/Timer" to="AudioStreamPlayer3D-OWL" method="_on_timer_timeout"]
+
