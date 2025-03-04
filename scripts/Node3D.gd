@@ -16,9 +16,9 @@ func _on_timer_timeout() -> void:
 	flashlight.light_energy = rand_amt
 	timer.start(rand_amt/7)
 	if rand_amt < 0.50:
-		flashlight.light_energy = 8
-	if rand_amt > 0.50:
 		flashlight.light_energy = 10
+	if rand_amt > 0.50:
+		flashlight.light_energy = 12
 
 
 func _physics_process(delta):

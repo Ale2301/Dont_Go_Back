@@ -6,7 +6,8 @@ extends CharacterBody3D
 @export var teleport_limit_x = 0.0
 @export var teleport_target_x = 79.24
 
-
+const WALKING = preload("res://Sonidos-Musica/PasosDelPersonajeJugable.ogg")
+@onready var Audio_FootStep= $AudioStreamPlayer3D
 
 
 
@@ -18,10 +19,19 @@ func _physics_process(delta):
 	if direction.length() > 0:
 		direction = direction.normalized()
 		target_velocity = direction * speed
+		
+		if !Audio_FootStep.playing:
+			Audio_FootStep.stream = WALKING
+			Audio_FootStep.play()
+	if direction.length() == 0:
+		if Audio_FootStep.playing:
+			Audio_FootStep.stop()
+	
 	
 	if not is_on_floor():
 		target_velocity.y -=gravity*delta
 	else:
+		
 		target_velocity.y = 0
 
 	# Moving the Character
