@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bk2es1e43h01v"]
+[gd_scene load_steps=13 format=3 uid="uid://bk2es1e43h01v"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uw8se"]
 [ext_resource type="PackedScene" uid="uid://dsn23pn5ecvjq" path="res://scenes/StreetSceneInstance.tscn" id="2_yue7m"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/Node3D.gd" id="5_l42jh"]
 [ext_resource type="PackedScene" uid="uid://d0x2dhf6w6lpq" path="res://scenes/HUD.tscn" id="6_crirl"]
 [ext_resource type="PackedScene" uid="uid://mtnidfurnuj5" path="res://textures/Farola.fbx" id="7_57bfg"]
+[ext_resource type="Script" path="res://scripts/EnemyStalker.gd" id="8_6mi7y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yuxok"]
 
@@ -18,6 +19,8 @@ fog_light_color = Color(0.275795, 0.301719, 0.342471, 1)
 fog_light_energy = 0.32
 fog_density = 0.2996
 volumetric_fog_density = 0.1342
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_p4rhr"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_uw8se")
@@ -157,3 +160,10 @@ transform = Transform3D(0.0269563, 1.63392, 0.322725, -0.00337291, -0.335502, 1.
 light_energy = 11.182
 light_indirect_energy = 1.323
 light_size = 0.162
+
+[node name="EnemyStalker" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.23543, 1.91322, 73.233)
+script = ExtResource("8_6mi7y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnemyStalker"]
+mesh = SubResource("CapsuleMesh_p4rhr")
