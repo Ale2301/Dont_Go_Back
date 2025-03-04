@@ -1,20 +1,33 @@
-[gd_scene load_steps=17 format=3 uid="uid://bk2es1e43h01v"]
+[gd_scene load_steps=27 format=3 uid="uid://bk2es1e43h01v"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uw8se"]
 [ext_resource type="PackedScene" uid="uid://dsn23pn5ecvjq" path="res://scenes/StreetSceneInstance.tscn" id="2_yue7m"]
 [ext_resource type="PackedScene" uid="uid://faqqu8oh31xy" path="res://scenes/player.tscn" id="3_0ueof"]
 [ext_resource type="Script" path="res://scripts/Camera_Movement.gd" id="4_slnx7"]
 [ext_resource type="Script" path="res://scripts/Node3D.gd" id="5_l42jh"]
+[ext_resource type="AudioStream" uid="uid://dpvdl2ipas8ha" path="res://Sonidos-Musica/PasosDelPersonajeJugable.ogg" id="6_40tra"]
 [ext_resource type="PackedScene" uid="uid://d0x2dhf6w6lpq" path="res://scenes/HUD.tscn" id="6_crirl"]
 [ext_resource type="Script" path="res://scenes/HUD.gd" id="7_vsadh"]
 [ext_resource type="PackedScene" uid="uid://30u2dtnmw38p" path="res://Farola.tscn" id="7_x74ja"]
 [ext_resource type="Script" path="res://Farola.gd" id="8_s3a4p"]
 [ext_resource type="Texture2D" uid="uid://cgpk076gwe06f" path="res://NightSkyHDRI003_4K-HDR.exr" id="8_xgt8n"]
+[ext_resource type="Texture2D" uid="uid://dlj8e10kfp8wn" path="res://rojo.png" id="9_aat0l"]
+[ext_resource type="Script" path="res://scenes/MeshInstance2D.gd" id="10_oe2o7"]
 [ext_resource type="PackedScene" uid="uid://bpvdxqxin0831" path="res://Botones/PoliceCar.fbx" id="11_1johk"]
+[ext_resource type="AudioStream" uid="uid://bgf3flfu60hba" path="res://Sonidos-Musica/Viento.ogg" id="13_38dmi"]
+[ext_resource type="AudioStream" uid="uid://bvxw6ff66w3dv" path="res://Sonidos-Musica/Grillos.ogg" id="14_xenfk"]
+[ext_resource type="Script" path="res://scenes/AudioStreamPlayer3D-IRONS.gd" id="15_ysvn8"]
+[ext_resource type="AudioStream" uid="uid://sfxve3ic2k2s" path="res://Sonidos-Musica/Buho.ogg" id="16_k31g2"]
+[ext_resource type="Script" path="res://scenes/AudioStreamPlayer3D-OWL.gd" id="17_2vohe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yuxok"]
 
+[sub_resource type="FogMaterial" id="FogMaterial_vm3iq"]
+density = 0.02
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_lffgm"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_gsksg"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xutq2"]
 panorama = ExtResource("8_xgt8n")
@@ -28,12 +41,15 @@ background_mode = 2
 background_energy_multiplier = 2.18
 sky = SubResource("Sky_aovxj")
 sky_custom_fov = 36.0
+tonemap_mode = 3
+tonemap_exposure = 1.13
+tonemap_white = 5.02
 fog_enabled = true
 fog_light_color = Color(0.18382, 0.20313, 0.233487, 1)
-fog_light_energy = 0.01
-fog_density = 0.3838
+fog_light_energy = 0.14
+fog_density = 0.3592
 volumetric_fog_enabled = true
-volumetric_fog_density = 1.0
+volumetric_fog_density = 0.8197
 volumetric_fog_albedo = Color(0, 0, 0, 1)
 volumetric_fog_length = 100.0
 
@@ -104,18 +120,32 @@ transform = Transform3D(1.02583, 0, 0, 0, 1.02583, 0, 0, 0, 1.02583, 79.241, 0.6
 transform = Transform3D(-4.26108e-08, 0, 0.974823, 0, 0.974822, 0, -0.974822, 0, -4.26108e-08, 0.00495911, 0.76132, 0.000971846)
 script = ExtResource("4_slnx7")
 
+[node name="FogVolume" type="FogVolume" parent="Player/PlayerCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.38419, -0.0619995, -0.285652, -79.378)
+size = Vector3(7.46474, 7.44721, 40.8156)
+material = SubResource("FogMaterial_vm3iq")
+
 [node name="LightRotation" type="Node3D" parent="Player"]
 script = ExtResource("5_l42jh")
 
 [node name="FlashLight" type="SpotLight3D" parent="Player/LightRotation"]
-transform = Transform3D(-0.00668198, -0.184852, 0.95711, -0.0012905, 0.957134, 0.184847, -0.974797, -2.26974e-10, -0.00680546, -0.363899, 0.343648, 0)
-light_energy = 16.0
+transform = Transform3D(-0.00668198, -0.184852, 0.95711, -0.0012905, 0.957134, 0.184847, -0.974797, -4.19901e-09, -0.00680545, -0.363899, 0.343648, 0)
+light_energy = 120.0
+light_indirect_energy = 1.183
+light_volumetric_fog_energy = 4.048
 spot_range = 7.45678
+spot_attenuation = 0.0769467
 spot_angle = 30.6485
+spot_angle_attenuation = 0.267943
 
 [node name="TimerFlashlight" type="Timer" parent="Player/LightRotation"]
 wait_time = 0.037
 autostart = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
+transform = Transform3D(0.97482, 0, 0, 0, 0.97482, 0, 0, 0, 0.97482, 0, -0.548576, 0)
+stream = ExtResource("6_40tra")
+max_distance = 3.0
 
 [node name="PlaceholderThings" type="StaticBody3D" parent="."]
 transform = Transform3D(1.02939, 0, 0, 0, 1.02939, 0, 0, 0, 1.02939, 84.1556, 2.71483, -0.0712345)
@@ -196,6 +226,20 @@ theme_override_font_sizes/font_size = 33
 text = "00"
 metadata/_edit_use_anchors_ = true
 
+[node name="MeshInstance2D" type="MeshInstance2D" parent="PlayerHUD"]
+position = Vector2(76, 87)
+scale = Vector2(50, 50)
+mesh = SubResource("SphereMesh_gsksg")
+texture = ExtResource("9_aat0l")
+script = ExtResource("10_oe2o7")
+
+[node name="Timer" type="Timer" parent="PlayerHUD/MeshInstance2D"]
+wait_time = 0.5
+autostart = true
+
+[node name="Timer2" type="Timer" parent="PlayerHUD/MeshInstance2D"]
+wait_time = 0.5
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8vxwo")
 
@@ -205,7 +249,7 @@ script = ExtResource("8_s3a4p")
 
 [node name="FarolaLight" type="SpotLight3D" parent="Farola"]
 transform = Transform3D(-0.000497434, 1.34821, 0.266247, -0.00292413, -0.290864, 1.47285, 0.999998, -2.22439e-05, 0.00198095, -0.25765, 3.36051, 1.00163)
-light_energy = 11.182
+light_energy = 100.0
 light_indirect_energy = 1.323
 light_size = 0.162
 
@@ -215,5 +259,40 @@ autostart = true
 [node name="PoliceCar" parent="." instance=ExtResource("11_1johk")]
 transform = Transform3D(0.848473, 0, 0.529238, 0, 1, 0, -0.529238, 0, 0.848473, 75.8969, 0.0773042, -2.43747)
 
+[node name="AudioStreamPlayer3D-WIND" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("13_38dmi")
+autoplay = true
+max_distance = 2000.0
+
+[node name="AudioStreamPlayer3D-IRONS" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.7263, 0, -5.54945)
+stream = ExtResource("14_xenfk")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("15_ysvn8")
+
+[node name="Timer" type="Timer" parent="AudioStreamPlayer3D-IRONS"]
+wait_time = 6.0
+autostart = true
+
+[node name="AudioStreamPlayer3D-OWL" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.7263, 0, 5.82444)
+stream = ExtResource("16_k31g2")
+volume_db = -15.0
+pitch_scale = 0.82
+script = ExtResource("17_2vohe")
+
+[node name="Timer" type="Timer" parent="AudioStreamPlayer3D-OWL"]
+wait_time = 9.0
+autostart = true
+
 [connection signal="timeout" from="Player/LightRotation/TimerFlashlight" to="Player/LightRotation" method="_on_timer_timeout"]
+[connection signal="visibility_changed" from="PlayerHUD/MeshInstance2D" to="PlayerHUD/MeshInstance2D" method="_on_visibility_changed"]
+[connection signal="timeout" from="PlayerHUD/MeshInstance2D/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="PlayerHUD/MeshInstance2D/Timer" to="PlayerHUD/MeshInstance2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="PlayerHUD/MeshInstance2D/Timer2" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="PlayerHUD/MeshInstance2D/Timer2" to="PlayerHUD/MeshInstance2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="PlayerHUD/MeshInstance2D/Timer2" to="PlayerHUD/MeshInstance2D" method="_on_timer_2_timeout"]
 [connection signal="timeout" from="Farola/Timer" to="Farola" method="_on_timer_timeout"]
+[connection signal="timeout" from="AudioStreamPlayer3D-IRONS/Timer" to="AudioStreamPlayer3D-IRONS" method="_on_timer_timeout"]
+[connection signal="timeout" from="AudioStreamPlayer3D-OWL/Timer" to="AudioStreamPlayer3D-OWL" method="_on_timer_timeout"]
