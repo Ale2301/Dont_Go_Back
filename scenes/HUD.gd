@@ -10,12 +10,24 @@ func _process(delta) -> void:
 	msec = fmod(time, 1) * 100
 	seconds = fmod(time, 60)
 	minutes = fmod(time,3600) / 60
-	$Minutes.text = "%02d:" % minutes
-	$Seconds.text = "%02d." % seconds
-	$Mseconds.text = "%03d" % msec
+	$"PlayerHUD#Minutes".text = "%02d:" % minutes
+	$"PlayerHUD#Seconds".text = "%02d." % seconds
+	$"PlayerHUD#Mseconds".text = "%03d" % msec
 	
 func stop() -> void:
 	set_process(false)
 	
 func get_time_formatted() -> String:
 	return "%02d:%02d.%03d" % [minutes, seconds, msec]
+
+
+
+
+func _on_timer_timeout():
+	$MeshInstance2D.visible = false
+	$MeshInstance2D/Timer2.start()
+
+
+func _on_timer_2_timeout():
+	$MeshInstance2D.visible = true
+	$MeshInstance2D/Timer.start()

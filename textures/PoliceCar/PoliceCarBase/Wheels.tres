@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://dfaaeibryi615"]
+
+[ext_resource type="Texture2D" uid="uid://t3v7faiw2k0i" path="res://textures/PoliceCar/Wheels/Wheel_Base_Color.png" id="1_3gw4m"]
+[ext_resource type="Texture2D" uid="uid://cmwyin52k2632" path="res://textures/PoliceCar/Wheels/Wheel_mettalic.png" id="2_a72a2"]
+[ext_resource type="Texture2D" uid="uid://bgntccb1p5f84" path="res://textures/PoliceCar/Wheels/Wheel_Normal.png" id="3_acylr"]
+[ext_resource type="Texture2D" uid="uid://b5rbrq2v2b4l7" path="res://textures/PoliceCar/Wheels/Wheel_Roughness.png" id="4_y4hsa"]
+
+[resource]
+resource_name = "Wheels"
+albedo_texture = ExtResource("1_3gw4m")
+metallic = 1.0
+metallic_texture = ExtResource("2_a72a2")
+roughness_texture = ExtResource("4_y4hsa")
+normal_enabled = true
+normal_texture = ExtResource("3_acylr")

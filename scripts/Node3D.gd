@@ -35,7 +35,15 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			rotate_y(deg_to_rad(-event.relative.x * mouse_sensitivity_horizontal))
-			rotate_x(deg_to_rad(- event.relative.y * mouse_sensitivity_vertical))
+			rotate_x(deg_to_rad(-event.relative.y * mouse_sensitivity_vertical))
 
 
 
+func _on_timer_flashlight_timeout() -> void:
+	var rand_amt := (randf())
+	flashlight.light_energy = rand_amt
+	timer.start(rand_amt/7)
+	if rand_amt < 0.50:
+		flashlight.light_energy = 60
+	if rand_amt > 0.50:
+		flashlight.light_energy = 40

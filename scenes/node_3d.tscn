@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://t5e0nmpns4pp"]
+[gd_scene load_steps=3 format=3 uid="uid://t5e0nmpns4pp"]
+
+[ext_resource type="PackedScene" uid="uid://r4sa87ke8s4" path="res://textures/Calle.fbx" id="1_gv2kh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yj8ao"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+mesh = SubResource("BoxMesh_yj8ao")
+skeleton = NodePath("../..")
+
+[node name="Street" parent="." instance=ExtResource("1_gv2kh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43807, 0, -0.503997)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://cijewcamdffsc"]
+
+[ext_resource type="PackedScene" uid="uid://bondoonwpgoso" path="res://Signal2.fbx" id="1_bdfh4"]
+[ext_resource type="Texture2D" uid="uid://dlkct14tdbobj" path="res://textures/Signal2/Signal2_Base_Color.png" id="2_502ob"]
+[ext_resource type="Texture2D" uid="uid://crrwpmdwlssg0" path="res://textures/Signal2/Signal2_Mettalic.png" id="3_gmfcp"]
+[ext_resource type="Texture2D" uid="uid://scflw0mobw66" path="res://textures/Signal2/Signal2_Normal.png" id="4_mnfwo"]
+[ext_resource type="Texture2D" uid="uid://c60evtfmha8ch" path="res://textures/Signal2/Signal2_Roughnes.png" id="5_pvlgw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5uui"]
+albedo_texture = ExtResource("2_502ob")
+metallic = 1.0
+metallic_texture = ExtResource("3_gmfcp")
+roughness_texture = ExtResource("5_pvlgw")
+normal_enabled = true
+normal_texture = ExtResource("4_mnfwo")
+
+[node name="Root Scene" instance=ExtResource("1_bdfh4")]
+
+[node name="signal_2" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_s5uui")
