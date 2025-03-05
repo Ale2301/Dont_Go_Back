@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bk2es1e43h01v"]
+[gd_scene load_steps=32 format=3 uid="uid://bk2es1e43h01v"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uw8se"]
 [ext_resource type="PackedScene" uid="uid://dsn23pn5ecvjq" path="res://scenes/StreetSceneInstance.tscn" id="2_yue7m"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://cope63hqt18jv" path="res://Sonidos-Musica/Grillos.ogg" id="10_71u8s"]
 [ext_resource type="Script" path="res://scenes/Irons.gd" id="11_euomm"]
 [ext_resource type="AudioStream" uid="uid://byfmw2cr7odun" path="res://Sonidos-Musica/Buho.ogg" id="11_ibu0g"]
+[ext_resource type="AudioStream" uid="uid://o2d1d0fnmloc" path="res://Sonidos-Musica/CorazonAcelerado.ogg" id="13_rwxrr"]
 [ext_resource type="Script" path="res://scenes/Owl.gd" id="14_ro45c"]
 [ext_resource type="PackedScene" uid="uid://2ic1xv015xvr" path="res://textures/PoliceCar/PoliceCarBase/PoliceCar.fbx" id="16_upb55"]
 [ext_resource type="PackedScene" uid="uid://dlncakfb16vw7" path="res://scenes/Tree.tscn" id="17_u13b7"]
@@ -209,6 +210,11 @@ shape = SubResource("BoxShape3D_yuxok")
 
 [node name="Player" parent="." instance=ExtResource("3_0ueof")]
 transform = Transform3D(1.02583, 0, 0, 0, 1.02583, 0, 0, 0, 1.02583, 79.241, 0.644475, -0.063)
+
+[node name="HearthSound" type="AudioStreamPlayer3D" parent="Player"]
+transform = Transform3D(0.97482, 0, -7.26298e-09, 0, 0.97482, 0, 7.26298e-09, 0, 0.97482, 0, 0, 0)
+stream = ExtResource("13_rwxrr")
+volume_db = -15.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
 transform = Transform3D(0.97482, 0, 0, 0, 0.97482, 0, 0, 0, 0.97482, -0.234436, -0.628247, 0.0614137)
@@ -519,6 +525,8 @@ script = ExtResource("23_6dadc")
 
 [node name="Root Scene" parent="StaticBody3D" instance=ExtResource("23_dk88r")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.0265465, 0.12874, -0.0186577)
+
+[node name="ChaseEnemy" type="StaticBody3D" parent="."]
 
 [connection signal="timeout" from="Player/LightRotation/TimerFlashlight" to="Player/LightRotation" method="_on_timer_flashlight_timeout"]
 [connection signal="timeout" from="HUD/MeshInstance2D/Timer" to="HUD" method="_on_timer_timeout"]

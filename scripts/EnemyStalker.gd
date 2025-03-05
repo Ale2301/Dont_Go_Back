@@ -27,6 +27,8 @@ func _physics_process(delta):
 	var playerPosition = player.global_transform.origin
 	timePassed += 0.01
 	if (stalkerPaused):
+		if not $"../Player/HearthSound".playing:
+			$"../Player/HearthSound".play()
 		match placeWhereEnemySpawned:
 			1:
 				var offset = player.transform.basis.x
