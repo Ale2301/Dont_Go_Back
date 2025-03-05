@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bg7w6okw0pexu"
-path.s3tc="res://.godot/imported/Streetlight_uv2 normal.png-b1d9c6702f65c3571bf41be7cb63b855.s3tc.ctex"
+uid="uid://b5rbrq2v2b4l7"
+path.s3tc="res://.godot/imported/Wheel_Roughness.png-098984afa3e912900a1b6ca8e0df41e8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Farola.fbm/Streetlight_uv2 normal.png"
-dest_files=["res://.godot/imported/Streetlight_uv2 normal.png-b1d9c6702f65c3571bf41be7cb63b855.s3tc.ctex"]
+source_file="res://textures/PoliceCar/Wheels/Wheel_Roughness.png"
+dest_files=["res://.godot/imported/Wheel_Roughness.png-098984afa3e912900a1b6ca8e0df41e8.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://Farola.fbm/Streetlight_uv2 normal.png"
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

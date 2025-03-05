@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://cwc44r4suby63"]
+
+[ext_resource type="Texture2D" uid="uid://d2afetp4spkw3" path="res://textures/Stalker/Eyes/Entity01.2_eyes_Base_Color.png" id="1_gveh2"]
+[ext_resource type="Texture2D" uid="uid://bksnc5t8j568o" path="res://textures/Stalker/Eyes/Entity01.2_eyes_Emmisive.png" id="2_offbj"]
+[ext_resource type="Texture2D" uid="uid://ckxojdf2ri0hh" path="res://textures/Stalker/Eyes/Entity01.2_eyes_Mettalic.png" id="3_iopee"]
+[ext_resource type="Texture2D" uid="uid://cuyk6mclrswwp" path="res://textures/Stalker/Eyes/Entity01.2_eyes_Normal.png" id="4_isosd"]
+[ext_resource type="Texture2D" uid="uid://ddqhjht6enrdg" path="res://textures/Stalker/Eyes/Entity01_eyes_roughness.png" id="5_fx8bs"]
+
+[resource]
+resource_name = "Stalker_Eyes"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_gveh2")
+metallic = 1.0
+metallic_texture = ExtResource("3_iopee")
+roughness_texture = ExtResource("5_fx8bs")
+emission_enabled = true
+emission_texture = ExtResource("2_offbj")
+normal_enabled = true
+normal_texture = ExtResource("4_isosd")

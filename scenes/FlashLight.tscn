@@ -1,0 +1,23 @@
+[gd_scene load_steps=8 format=3 uid="uid://bawmypwt5lu5"]
+
+[ext_resource type="PackedScene" uid="uid://cpug5eax47vfe" path="res://Flashlight.fbx" id="1_pwopj"]
+[ext_resource type="Texture2D" uid="uid://du5mta4crr0mt" path="res://textures/Flashlight/flashlight_uv-base_color.png" id="2_n4d1m"]
+[ext_resource type="Texture2D" uid="uid://d2fin7lf5037" path="res://textures/Flashlight/flashlight_uv_emisive.png" id="3_4o85l"]
+[ext_resource type="Texture2D" uid="uid://cxovt7mg8gad6" path="res://textures/Flashlight/flashlight_uv_metallic.png" id="4_8lcxb"]
+[ext_resource type="Texture2D" uid="uid://i07k4v8velrm" path="res://textures/Flashlight/flashlight_uv_normal2.png" id="5_x52sv"]
+[ext_resource type="Texture2D" uid="uid://dwneucsrarrqo" path="res://textures/Flashlight/flashlight_uv-roughness2.png" id="6_ajqoe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_67n3e"]
+albedo_texture = ExtResource("2_n4d1m")
+metallic = 1.0
+metallic_texture = ExtResource("4_8lcxb")
+roughness_texture = ExtResource("6_ajqoe")
+emission_enabled = true
+emission_texture = ExtResource("3_4o85l")
+normal_enabled = true
+normal_texture = ExtResource("5_x52sv")
+
+[node name="Root Scene" instance=ExtResource("1_pwopj")]
+
+[node name="flashlight" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_67n3e")

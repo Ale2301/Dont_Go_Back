@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://wpnvp5c2w8n1"]
+
+[ext_resource type="Texture2D" uid="uid://cr01jsbmy6uoj" path="res://textures/Stalker/Theet/Entity01_Theet_Base_Color.png" id="1_54yxx"]
+
+[resource]
+resource_name = "Stalker_Theet"
+albedo_texture = ExtResource("1_54yxx")
+roughness = 0.0

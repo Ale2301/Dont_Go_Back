@@ -2,7 +2,7 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://r4rb6e5i53gu"
+uid="uid://b8aabteywcfh8"
 path="res://.godot/imported/Estatica.ogg-c59d85d23b54cf7b69a005801aff0943.oggvorbisstr"
 
 [deps]
@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Estatica.ogg-c59d85d23b54cf7b69a005801aff0943
 
 [params]
 
-loop=true
-loop_offset=0.0
-bpm=0.0
+loop=false
+loop_offset=0
+bpm=0
 beat_count=0
 bar_beats=4

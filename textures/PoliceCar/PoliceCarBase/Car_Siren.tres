@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://bb5wtx5lpgk7o"]
+
+[ext_resource type="Texture2D" uid="uid://cxaflfkbb24g0" path="res://textures/PoliceCar/Siren/Siren_Base_Color.png" id="1_8i61p"]
+[ext_resource type="Texture2D" uid="uid://cw62ryrcjkj12" path="res://textures/PoliceCar/Siren/Siren_Mettalic.png" id="2_6d1l8"]
+[ext_resource type="Texture2D" uid="uid://5svkao2l56na" path="res://textures/PoliceCar/Siren/Siren_Normal.png" id="3_6fik2"]
+[ext_resource type="Texture2D" uid="uid://b1e4hqgtckpwq" path="res://textures/PoliceCar/Siren/Siren_Roughness.png" id="4_s5sab"]
+
+[resource]
+resource_name = "Car_Siren"
+albedo_texture = ExtResource("1_8i61p")
+metallic = 1.0
+metallic_texture = ExtResource("2_6d1l8")
+roughness_texture = ExtResource("4_s5sab")
+normal_enabled = true
+normal_texture = ExtResource("3_6fik2")

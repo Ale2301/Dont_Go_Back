@@ -1,63 +1,55 @@
-
-[gd_scene load_steps=27 format=3 uid="uid://bk2es1e43h01v"]
-
+[gd_scene load_steps=31 format=3 uid="uid://bk2es1e43h01v"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uw8se"]
 [ext_resource type="PackedScene" uid="uid://dsn23pn5ecvjq" path="res://scenes/StreetSceneInstance.tscn" id="2_yue7m"]
 [ext_resource type="PackedScene" uid="uid://faqqu8oh31xy" path="res://scenes/player.tscn" id="3_0ueof"]
 [ext_resource type="Script" path="res://scripts/Camera_Movement.gd" id="4_slnx7"]
 [ext_resource type="Script" path="res://scripts/Node3D.gd" id="5_l42jh"]
-[ext_resource type="AudioStream" uid="uid://dpvdl2ipas8ha" path="res://Sonidos-Musica/PasosDelPersonajeJugable.ogg" id="6_40tra"]
-[ext_resource type="PackedScene" uid="uid://d0x2dhf6w6lpq" path="res://scenes/HUD.tscn" id="6_crirl"]
-
-[ext_resource type="Script" path="res://scenes/HUD.gd" id="7_vsadh"]
-[ext_resource type="PackedScene" uid="uid://30u2dtnmw38p" path="res://Farola.tscn" id="7_x74ja"]
-[ext_resource type="Script" path="res://Farola.gd" id="8_s3a4p"]
-[ext_resource type="Texture2D" uid="uid://cgpk076gwe06f" path="res://NightSkyHDRI003_4K-HDR.exr" id="8_xgt8n"]
-[ext_resource type="Texture2D" uid="uid://dlj8e10kfp8wn" path="res://rojo.png" id="9_aat0l"]
-[ext_resource type="Script" path="res://scenes/MeshInstance2D.gd" id="10_oe2o7"]
-[ext_resource type="PackedScene" uid="uid://bpvdxqxin0831" path="res://Botones/PoliceCar.fbx" id="11_1johk"]
-[ext_resource type="AudioStream" uid="uid://bgf3flfu60hba" path="res://Sonidos-Musica/Viento.ogg" id="13_38dmi"]
-[ext_resource type="AudioStream" uid="uid://bvxw6ff66w3dv" path="res://Sonidos-Musica/Grillos.ogg" id="14_xenfk"]
-[ext_resource type="Script" path="res://scenes/AudioStreamPlayer3D-IRONS.gd" id="15_ysvn8"]
-[ext_resource type="AudioStream" uid="uid://sfxve3ic2k2s" path="res://Sonidos-Musica/Buho.ogg" id="16_k31g2"]
-[ext_resource type="Script" path="res://scenes/AudioStreamPlayer3D-OWL.gd" id="17_2vohe"]
-
+[ext_resource type="AudioStream" uid="uid://ohp7wh7r5bel" path="res://Sonidos-Musica/PasosDelPersonajeJugable.ogg" id="5_uwnv0"]
+[ext_resource type="PackedScene" uid="uid://30u2dtnmw38p" path="res://Farola.tscn" id="6_3sda4"]
+[ext_resource type="PackedScene" uid="uid://d0x2dhf6w6lpq" path="res://scenes/HUD.tscn" id="6_soan6"]
+[ext_resource type="Script" path="res://Farola.gd" id="7_dy13o"]
+[ext_resource type="Script" path="res://scenes/HUD.gd" id="7_v4n7k"]
+[ext_resource type="Texture2D" uid="uid://dcbanj0vrlgvo" path="res://rojo.png" id="8_1b5gv"]
+[ext_resource type="AudioStream" uid="uid://ctstcnton4a1t" path="res://Sonidos-Musica/Viento.ogg" id="10_0ndkp"]
+[ext_resource type="AudioStream" uid="uid://cope63hqt18jv" path="res://Sonidos-Musica/Grillos.ogg" id="10_71u8s"]
+[ext_resource type="Script" path="res://scenes/Irons.gd" id="11_euomm"]
+[ext_resource type="AudioStream" uid="uid://byfmw2cr7odun" path="res://Sonidos-Musica/Buho.ogg" id="11_ibu0g"]
+[ext_resource type="Script" path="res://scenes/Owl.gd" id="14_ro45c"]
+[ext_resource type="PackedScene" uid="uid://2ic1xv015xvr" path="res://textures/PoliceCar/PoliceCarBase/PoliceCar.fbx" id="16_upb55"]
+[ext_resource type="PackedScene" uid="uid://dlncakfb16vw7" path="res://scenes/Tree.tscn" id="17_u13b7"]
+[ext_resource type="PackedScene" uid="uid://dm4pqx7y2i0pk" path="res://scenes/Floor.tscn" id="18_pouvb"]
+[ext_resource type="PackedScene" uid="uid://bawmypwt5lu5" path="res://scenes/FlashLight.tscn" id="19_i2xim"]
+[ext_resource type="PackedScene" uid="uid://cy1pbu2e5vys6" path="res://scenes/Signal 1.tscn" id="20_pdc3g"]
+[ext_resource type="PackedScene" uid="uid://cijewcamdffsc" path="res://scenes/Signal 2.tscn" id="21_dba54"]
+[ext_resource type="Script" path="res://scripts/EnemyStalker.gd" id="23_6dadc"]
+[ext_resource type="PackedScene" uid="uid://dacfbmoqh7kxf" path="res://Stalker/Stalker.fbx" id="23_dk88r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yuxok"]
 
-[sub_resource type="FogMaterial" id="FogMaterial_vm3iq"]
-density = 0.02
-
 [sub_resource type="CylinderMesh" id="CylinderMesh_lffgm"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_gsksg"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xutq2"]
-panorama = ExtResource("8_xgt8n")
-filter = false
-
-[sub_resource type="Sky" id="Sky_aovxj"]
-sky_material = SubResource("PanoramaSkyMaterial_xutq2")
+[sub_resource type="SphereMesh" id="SphereMesh_vtlrr"]
 
 [sub_resource type="Environment" id="Environment_8vxwo"]
 background_mode = 2
 background_energy_multiplier = 2.18
-sky = SubResource("Sky_aovxj")
-sky_custom_fov = 36.0
 tonemap_mode = 3
-tonemap_exposure = 1.13
-tonemap_white = 5.02
+glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.18382, 0.20313, 0.233487, 1)
-fog_light_energy = 0.14
 fog_density = 0.3592
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.8197
+volumetric_fog_density = 0.4567
 volumetric_fog_albedo = Color(0, 0, 0, 1)
-volumetric_fog_length = 100.0
+volumetric_fog_detail_spread = 1.93187
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_p4rhr"]
+[sub_resource type="FogMaterial" id="FogMaterial_s835k"]
+density = 0.051
+height_falloff = 4.43829e-05
+edge_fade = 3.67584
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s4k84"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_uw8se")
@@ -112,6 +104,102 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.83
 [node name="FloorInstance16" parent="FloorSpriteHandler" instance=ExtResource("2_yue7m")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.3303, 0, 0)
 
+[node name="Floor" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 78.0215, 0, 0.0373611)
+
+[node name="Floor2" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 71.529, 0, 0.0373611)
+
+[node name="Floor3" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 65.0353, 0, 0.0373611)
+
+[node name="Floor4" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 58.5427, 0, 0.0373611)
+
+[node name="Floor5" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 52.1373, 0, 0.0373611)
+
+[node name="Floor6" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 45.6448, 0, 0.0373611)
+
+[node name="Floor7" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.151, 0, 0.0373611)
+
+[node name="Floor8" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.6585, 0, 0.0373611)
+
+[node name="Floor9" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.1542, 0, 0.0373611)
+
+[node name="Floor10" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.6617, 0, 0.0373611)
+
+[node name="Floor11" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.1679, 0, 0.0373611)
+
+[node name="Floor12" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6.67539, 0, 0.0373611)
+
+[node name="Floor13" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.269958, 0, 0.0373611)
+
+[node name="Floor14" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.22256, 0, 0.0373611)
+
+[node name="Floor15" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.7163, 0, 0.0373611)
+
+[node name="Floor16" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.2088, 0, 0.0373611)
+
+[node name="Floor17" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 78.0215, 0, -0.149714)
+
+[node name="Floor18" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 71.529, 0, -0.149714)
+
+[node name="Floor19" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 65.0353, 0, -0.149714)
+
+[node name="Floor20" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 58.5427, 0, -0.149714)
+
+[node name="Floor21" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 52.1373, 0, -0.149714)
+
+[node name="Floor22" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 45.6448, 0, -0.149714)
+
+[node name="Floor23" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 39.151, 0, -0.149714)
+
+[node name="Floor24" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 32.6585, 0, -0.149714)
+
+[node name="Floor25" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 26.1542, 0, -0.149714)
+
+[node name="Floor26" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 19.6617, 0, -0.149714)
+
+[node name="Floor27" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 13.1679, 0, -0.149714)
+
+[node name="Floor28" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 6.67539, 0, -0.149714)
+
+[node name="Floor29" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 0.269958, 0, -0.149714)
+
+[node name="Floor30" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -6.22256, 0, -0.149714)
+
+[node name="Floor31" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -12.7163, 0, -0.149714)
+
+[node name="Floor32" parent="FloorSpriteHandler" instance=ExtResource("18_pouvb")]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -19.2088, 0, -0.149714)
+
 [node name="FloorCollider" type="StaticBody3D" parent="."]
 transform = Transform3D(162.738, 0, 0, 0, 0.0287292, 0, 0, 0, 1.54428, 0, 0, 0)
 
@@ -122,23 +210,22 @@ shape = SubResource("BoxShape3D_yuxok")
 [node name="Player" parent="." instance=ExtResource("3_0ueof")]
 transform = Transform3D(1.02583, 0, 0, 0, 1.02583, 0, 0, 0, 1.02583, 79.241, 0.644475, -0.063)
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
+transform = Transform3D(0.97482, 0, 0, 0, 0.97482, 0, 0, 0, 0.97482, -0.234436, -0.628247, 0.0614137)
+stream = ExtResource("5_uwnv0")
+volume_db = -20.0
+
 [node name="PlayerCamera" type="Camera3D" parent="Player"]
 transform = Transform3D(-4.26108e-08, 0, 0.974823, 0, 0.974822, 0, -0.974822, 0, -4.26108e-08, 0.00495911, 0.76132, 0.000971846)
 script = ExtResource("4_slnx7")
-
-[node name="FogVolume" type="FogVolume" parent="Player/PlayerCamera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 4.38419, -0.0619995, -0.285652, -79.378)
-size = Vector3(7.46474, 7.44721, 40.8156)
-material = SubResource("FogMaterial_vm3iq")
 
 [node name="LightRotation" type="Node3D" parent="Player"]
 script = ExtResource("5_l42jh")
 
 [node name="FlashLight" type="SpotLight3D" parent="Player/LightRotation"]
-transform = Transform3D(-0.00668198, -0.184852, 0.95711, -0.0012905, 0.957134, 0.184847, -0.974797, -4.19901e-09, -0.00680545, -0.363899, 0.343648, 0)
-light_energy = 120.0
-light_indirect_energy = 1.183
-light_volumetric_fog_energy = 4.048
+transform = Transform3D(-4.26108e-08, 0, 0.97482, 0, 0.97482, 0, -0.97482, 0, -4.26108e-08, -0.508545, 0.343648, 0)
+light_energy = 80.0
+light_specular = 2.278
 spot_range = 7.45678
 spot_attenuation = 0.0769467
 spot_angle = 30.6485
@@ -147,11 +234,6 @@ spot_angle_attenuation = 0.267943
 [node name="TimerFlashlight" type="Timer" parent="Player/LightRotation"]
 wait_time = 0.037
 autostart = true
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
-transform = Transform3D(0.97482, 0, 0, 0, 0.97482, 0, 0, 0, 0.97482, 0, -0.548576, 0)
-stream = ExtResource("6_40tra")
-max_distance = 3.0
 
 [node name="PlaceholderThings" type="StaticBody3D" parent="."]
 transform = Transform3D(1.02939, 0, 0, 0, 1.02939, 0, 0, 0, 1.02939, 84.1556, 2.71483, -0.0712345)
@@ -202,10 +284,10 @@ transform = Transform3D(0.999299, 0.0325133, -0.0185898, -0.0318805, 0.998934, 0
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlaceholderThings2/StaticBody3D2/StaticBody3D2/StaticBody3D2"]
 mesh = SubResource("CylinderMesh_lffgm")
 
-[node name="PlayerHUD" parent="." instance=ExtResource("6_crirl")]
-script = ExtResource("7_vsadh")
+[node name="HUD" parent="." instance=ExtResource("6_soan6")]
+script = ExtResource("7_v4n7k")
 
-[node name="Minutes" type="Label" parent="PlayerHUD"]
+[node name="PlayerHUD#Minutes" type="Label" parent="HUD"]
 offset_left = 182.0
 offset_top = 63.0
 offset_right = 260.0
@@ -214,7 +296,7 @@ theme_override_font_sizes/font_size = 33
 text = "00:"
 metadata/_edit_use_anchors_ = true
 
-[node name="Seconds" type="Label" parent="PlayerHUD"]
+[node name="PlayerHUD#Seconds" type="Label" parent="HUD"]
 offset_left = 225.0
 offset_top = 63.0
 offset_right = 275.0
@@ -223,7 +305,7 @@ theme_override_font_sizes/font_size = 33
 text = "00:"
 metadata/_edit_use_anchors_ = true
 
-[node name="Mseconds" type="Label" parent="PlayerHUD"]
+[node name="PlayerHUD#Mseconds" type="Label" parent="HUD"]
 offset_left = 268.0
 offset_top = 63.0
 offset_right = 308.0
@@ -232,75 +314,215 @@ theme_override_font_sizes/font_size = 33
 text = "00"
 metadata/_edit_use_anchors_ = true
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="PlayerHUD"]
-position = Vector2(76, 87)
+[node name="MeshInstance2D" type="MeshInstance2D" parent="HUD"]
+position = Vector2(78, 88)
 scale = Vector2(50, 50)
-mesh = SubResource("SphereMesh_gsksg")
-texture = ExtResource("9_aat0l")
-script = ExtResource("10_oe2o7")
+mesh = SubResource("SphereMesh_vtlrr")
+texture = ExtResource("8_1b5gv")
 
-[node name="Timer" type="Timer" parent="PlayerHUD/MeshInstance2D"]
+[node name="Timer" type="Timer" parent="HUD/MeshInstance2D"]
 wait_time = 0.5
 autostart = true
 
-[node name="Timer2" type="Timer" parent="PlayerHUD/MeshInstance2D"]
+[node name="Timer2" type="Timer" parent="HUD/MeshInstance2D"]
 wait_time = 0.5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8vxwo")
 
-[node name="Farola" parent="." instance=ExtResource("7_x74ja")]
-transform = Transform3D(-3.18934e-08, 0, 1.0027, 0, 0.684223, 0, -0.729636, 0, -4.38293e-08, 73.3759, 0, -0.917747)
-script = ExtResource("8_s3a4p")
+[node name="FogVolume" type="FogVolume" parent="WorldEnvironment"]
+transform = Transform3D(89.255, 0, 0, 0, 1, 0, 0, 0, 1, 0.428795, 1.17479, -0.210846)
+shape = 4
+material = SubResource("FogMaterial_s835k")
 
-[node name="FarolaLight" type="SpotLight3D" parent="Farola"]
-transform = Transform3D(-0.000497434, 1.34821, 0.266247, -0.00292413, -0.290864, 1.47285, 0.999998, -2.22439e-05, 0.00198095, -0.25765, 3.36051, 1.00163)
-light_energy = 100.0
+[node name="Farola" parent="." instance=ExtResource("6_3sda4")]
+transform = Transform3D(0.033076, 0, 1.01857, 0, 0.755916, 0, -0.622603, 0, 0.0541117, 71.4115, 0, -1.0344)
+script = ExtResource("7_dy13o")
+
+[node name="Farola#FarolaLight" type="SpotLight3D" parent="Farola"]
+transform = Transform3D(0.106937, 1.56413, 0.338466, -0.00390329, -0.279534, 1.29302, 0.978204, -0.0644997, -0.010991, -0.188406, 3.90775, 1.43479)
+light_energy = 120.0
 light_indirect_energy = 1.323
 light_size = 0.162
-
+light_specular = 2.532
+spot_range = 5.00878
 
 [node name="Timer" type="Timer" parent="Farola"]
 autostart = true
 
-[node name="PoliceCar" parent="." instance=ExtResource("11_1johk")]
-transform = Transform3D(0.848473, 0, 0.529238, 0, 1, 0, -0.529238, 0, 0.848473, 75.8969, 0.0773042, -2.43747)
-
-[node name="AudioStreamPlayer3D-WIND" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("13_38dmi")
+[node name="Wind" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, 74.3168, 0, -5.81727)
+stream = ExtResource("10_0ndkp")
+volume_db = -15.0
 autoplay = true
-max_distance = 2000.0
 
-[node name="AudioStreamPlayer3D-IRONS" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.7263, 0, -5.54945)
-stream = ExtResource("14_xenfk")
-volume_db = -10.0
+[node name="Irons" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.3168, 0, -5.81727)
+stream = ExtResource("10_71u8s")
+volume_db = -15.0
 autoplay = true
-script = ExtResource("15_ysvn8")
+script = ExtResource("11_euomm")
 
-[node name="Timer" type="Timer" parent="AudioStreamPlayer3D-IRONS"]
+[node name="Timer" type="Timer" parent="Irons"]
 wait_time = 6.0
 autostart = true
 
-[node name="AudioStreamPlayer3D-OWL" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.7263, 0, 5.82444)
-stream = ExtResource("16_k31g2")
-volume_db = -15.0
-pitch_scale = 0.82
-script = ExtResource("17_2vohe")
+[node name="Owl" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.3168, 0, -5.81727)
+stream = ExtResource("11_ibu0g")
+volume_db = -20.0
+pitch_scale = 0.85
+script = ExtResource("14_ro45c")
 
-[node name="Timer" type="Timer" parent="AudioStreamPlayer3D-OWL"]
+[node name="Timer" type="Timer" parent="Owl"]
 wait_time = 9.0
 autostart = true
 
-[connection signal="timeout" from="Player/LightRotation/TimerFlashlight" to="Player/LightRotation" method="_on_timer_timeout"]
-[connection signal="visibility_changed" from="PlayerHUD/MeshInstance2D" to="PlayerHUD/MeshInstance2D" method="_on_visibility_changed"]
-[connection signal="timeout" from="PlayerHUD/MeshInstance2D/Timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="PlayerHUD/MeshInstance2D/Timer" to="PlayerHUD/MeshInstance2D" method="_on_timer_timeout"]
-[connection signal="timeout" from="PlayerHUD/MeshInstance2D/Timer2" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="PlayerHUD/MeshInstance2D/Timer2" to="PlayerHUD/MeshInstance2D" method="_on_timer_timeout"]
-[connection signal="timeout" from="PlayerHUD/MeshInstance2D/Timer2" to="PlayerHUD/MeshInstance2D" method="_on_timer_2_timeout"]
-[connection signal="timeout" from="Farola/Timer" to="Farola" method="_on_timer_timeout"]
-[connection signal="timeout" from="AudioStreamPlayer3D-IRONS/Timer" to="AudioStreamPlayer3D-IRONS" method="_on_timer_timeout"]
-[connection signal="timeout" from="AudioStreamPlayer3D-OWL/Timer" to="AudioStreamPlayer3D-OWL" method="_on_timer_timeout"]
+[node name="PoliceCar" parent="." instance=ExtResource("16_upb55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.3272, 0.0475049, -1.86982)
 
+[node name="FlashLight" parent="." instance=ExtResource("19_i2xim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.715, -2.38419e-07, 5.34257)
+
+[node name="Signal 1" parent="." instance=ExtResource("20_pdc3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.3309, 0, 8.48399)
+
+[node name="Signal 2" parent="." instance=ExtResource("21_dba54")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.8362, -2.38419e-07, 9.29668)
+
+[node name="TreeSpriteHandler" type="Node3D" parent="."]
+
+[node name="Tree" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.056, 0, 0.753581)
+
+[node name="Tree2" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.1246, 0, 0.753581)
+
+[node name="Tree3" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.1443, 0, 0.753581)
+
+[node name="Tree4" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.9003, 0, 0.753581)
+
+[node name="Tree5" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.056, 0, -5.20653)
+
+[node name="Tree6" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.1246, 0, -5.20653)
+
+[node name="Tree7" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.1443, 0, -5.20653)
+
+[node name="Tree8" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.9003, 0, -5.20653)
+
+[node name="Tree9" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.9398, 0, 0.753581)
+
+[node name="Tree10" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.0084, 0, 0.753581)
+
+[node name="Tree11" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.0281, 0, 0.753581)
+
+[node name="Tree12" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.7841, 0, 0.753581)
+
+[node name="Tree13" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.9398, 0, -5.20653)
+
+[node name="Tree14" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.0084, 0, -5.20653)
+
+[node name="Tree15" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.0281, 0, -5.20653)
+
+[node name="Tree16" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.7841, 0, -5.20653)
+
+[node name="Tree17" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.6963, 0, 0.753581)
+
+[node name="Tree18" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.7649, 0, 0.753581)
+
+[node name="Tree19" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7845, 0, 0.753581)
+
+[node name="Tree20" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5405, 0, 0.753581)
+
+[node name="Tree21" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.6963, 0, -5.20653)
+
+[node name="Tree22" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.7649, 0, -5.20653)
+
+[node name="Tree23" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.7845, 0, -5.20653)
+
+[node name="Tree24" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5405, 0, -5.20653)
+
+[node name="Tree25" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6963, 0, 0.753581)
+
+[node name="Tree26" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7649, 0, 0.753581)
+
+[node name="Tree27" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78454, 0, 0.753581)
+
+[node name="Tree28" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54054, 0, 0.753581)
+
+[node name="Tree29" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6963, 0, -5.20653)
+
+[node name="Tree30" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7649, 0, -5.20653)
+
+[node name="Tree31" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.78454, 0, -5.20653)
+
+[node name="Tree32" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54054, 0, -5.20653)
+
+[node name="Tree33" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48902, 0, 0.753581)
+
+[node name="Tree34" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.42037, 0, 0.753581)
+
+[node name="Tree35" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4007, 0, 0.753581)
+
+[node name="Tree36" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6447, 0, 0.753581)
+
+[node name="Tree37" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48902, 0, -5.20653)
+
+[node name="Tree38" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.42037, 0, -5.20653)
+
+[node name="Tree39" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4007, 0, -5.20653)
+
+[node name="Tree40" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6447, 0, -5.20653)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2976, 37.986)
+physics_material_override = SubResource("PhysicsMaterial_s4k84")
+script = ExtResource("23_6dadc")
+
+[node name="Root Scene" parent="StaticBody3D" instance=ExtResource("23_dk88r")]
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 0, 0, 0)
+
+[connection signal="timeout" from="Player/LightRotation/TimerFlashlight" to="Player/LightRotation" method="_on_timer_flashlight_timeout"]
+[connection signal="timeout" from="HUD/MeshInstance2D/Timer" to="HUD" method="_on_timer_timeout"]
+[connection signal="timeout" from="HUD/MeshInstance2D/Timer2" to="HUD" method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Farola/Timer" to="Farola" method="_on_timer_timeout"]
+[connection signal="timeout" from="Irons/Timer" to="Irons" method="_on_timer_timeout"]
+[connection signal="timeout" from="Owl/Timer" to="Owl" method="_on_timer_timeout"]

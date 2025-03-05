@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var timer = $Timer
-@onready var light = $FarolaLight
+@onready var light = $"Farola#FarolaLight"
 
 func _ready() -> void:
 	randomize()

@@ -1,27 +1,27 @@
-[gd_scene load_steps=7 format=3 uid="uid://30u2dtnmw38p"]
+[gd_scene load_steps=8 format=3 uid="uid://30u2dtnmw38p"]
 
 [ext_resource type="PackedScene" uid="uid://mtnidfurnuj5" path="res://textures/Farola.fbx" id="1_oapqk"]
-[ext_resource type="Texture2D" uid="uid://kgj038jnxahe" path="res://Farola.fbm/Streetlight_uv2 metalic.png" id="2_w4hkp"]
-[ext_resource type="Texture2D" uid="uid://bg7w6okw0pexu" path="res://Farola.fbm/Streetlight_uv2 normal.png" id="3_c0vm7"]
-[ext_resource type="Texture2D" uid="uid://dunl1cr7bxndr" path="res://Farola.fbm/Streetlight_uv2 roughness.png" id="4_28m5j"]
-[ext_resource type="AudioStream" uid="uid://dlqxfign7u3t2" path="res://Sonidos-Musica/Luz.ogg" id="5_2idok"]
+[ext_resource type="Texture2D" uid="uid://dnpbr8cebdlvs" path="res://textures/Streetlight/Streetlight_uv2 base_color.png" id="2_4iue8"]
+[ext_resource type="Texture2D" uid="uid://b2ft8gp6efxml" path="res://textures/Streetlight/Streetlight_uv2 metalic.png" id="3_jcqku"]
+[ext_resource type="Texture2D" uid="uid://bhjntwpgr1frx" path="res://textures/Streetlight/Streetlight_uv2 normal.png" id="4_3403q"]
+[ext_resource type="Texture2D" uid="uid://be0msuxj74e42" path="res://textures/Streetlight/Streetlight_uv2 roughness.png" id="5_28xl3"]
+[ext_resource type="AudioStream" uid="uid://df6siwmjwa2n6" path="res://Sonidos-Musica/Luz.ogg" id="5_bffpw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_00k8r"]
+albedo_texture = ExtResource("2_4iue8")
 metallic = 1.0
-metallic_texture = ExtResource("2_w4hkp")
-roughness_texture = ExtResource("4_28m5j")
+metallic_texture = ExtResource("3_jcqku")
+roughness_texture = ExtResource("5_28xl3")
 normal_enabled = true
-normal_texture = ExtResource("3_c0vm7")
+normal_texture = ExtResource("4_3403q")
 
 [node name="Root Scene" instance=ExtResource("1_oapqk")]
 
 [node name="farola" parent="RootNode" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_00k8r")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="RootNode" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.134958, 3.72726, 1.593)
-stream = ExtResource("5_2idok")
-volume_db = 6.783
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.157538, 3.51379, 1.47163)
+stream = ExtResource("5_bffpw")
 autoplay = true
 max_distance = 7.0
-panning_strength = 2.0

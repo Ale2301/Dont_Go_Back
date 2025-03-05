@@ -2,7 +2,9 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://bvxw6ff66w3dv"
+
+uid="uid://cope63hqt18jv"
+
 path="res://.godot/imported/Grillos.ogg-48964a238a628ddbab5f10777c2a6793.oggvorbisstr"
 
 [deps]

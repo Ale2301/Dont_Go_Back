@@ -2,7 +2,9 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://sfxve3ic2k2s"
+
+uid="uid://byfmw2cr7odun"
+
 path="res://.godot/imported/Buho.ogg-9b119cc56d4dc38e1f0db9d243b94677.oggvorbisstr"
 
 [deps]

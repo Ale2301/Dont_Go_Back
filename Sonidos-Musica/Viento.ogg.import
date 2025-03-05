@@ -2,7 +2,9 @@
 
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
-uid="uid://bgf3flfu60hba"
+
+uid="uid://ctstcnton4a1t"
+
 path="res://.godot/imported/Viento.ogg-536f530a88d993c408f20e68d2267cfb.oggvorbisstr"
 
 [deps]

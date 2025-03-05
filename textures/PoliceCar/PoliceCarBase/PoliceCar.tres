@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://1gerpygutxj4"]
+
+[ext_resource type="Texture2D" uid="uid://pf5end02kbys" path="res://textures/PoliceCar/PoliceCarBase/PoliceCar_Base_Color.png" id="1_d6l3p"]
+[ext_resource type="Texture2D" uid="uid://0d7evpjeiwf2" path="res://textures/PoliceCar/PoliceCarBase/PoliceCar_Emissive.png" id="2_ysrxd"]
+[ext_resource type="Texture2D" uid="uid://iaff6ldl1e2i" path="res://textures/PoliceCar/PoliceCarBase/PoliceCar_Metallic.png" id="3_j2nfu"]
+[ext_resource type="Texture2D" uid="uid://dcisa2exqlns6" path="res://textures/PoliceCar/PoliceCarBase/PoliceCar_Normal.png" id="4_o7jkq"]
+[ext_resource type="Texture2D" uid="uid://disqec2x7fvjp" path="res://textures/PoliceCar/PoliceCarBase/PoliceCar_Roughness.png" id="5_syaop"]
+
+[resource]
+resource_name = "PoliceCar"
+albedo_texture = ExtResource("1_d6l3p")
+metallic = 1.0
+metallic_texture = ExtResource("3_j2nfu")
+roughness_texture = ExtResource("5_syaop")
+emission_enabled = true
+emission_texture = ExtResource("2_ysrxd")
+normal_enabled = true
+normal_texture = ExtResource("4_o7jkq")

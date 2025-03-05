@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dunl1cr7bxndr"
-path.s3tc="res://.godot/imported/Streetlight_uv2 roughness.png-0e27950ea95196027a87c102493f41d3.s3tc.ctex"
+uid="uid://y2t0sm6exv4w"
+path.s3tc="res://.godot/imported/Entity01_Mettalic.png-a8398904938175451f978a62e94fa447.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Farola.fbm/Streetlight_uv2 roughness.png"
-dest_files=["res://.godot/imported/Streetlight_uv2 roughness.png-0e27950ea95196027a87c102493f41d3.s3tc.ctex"]
+source_file="res://textures/Stalker/Body/Entity01_Mettalic.png"
+dest_files=["res://.godot/imported/Entity01_Mettalic.png-a8398904938175451f978a62e94fa447.s3tc.ctex"]
 
 [params]
 

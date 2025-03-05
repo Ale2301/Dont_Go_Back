@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://b0yd0r33u5ebw"]
+
+[ext_resource type="Texture2D" uid="uid://0qnvks5y0gtd" path="res://textures/Stalker/Body/Entity01_Base_color.png" id="1_sbvcx"]
+[ext_resource type="Texture2D" uid="uid://y2t0sm6exv4w" path="res://textures/Stalker/Body/Entity01_Mettalic.png" id="2_764m0"]
+[ext_resource type="Texture2D" uid="uid://dlcgx8m3k87gg" path="res://textures/Stalker/Body/Entity01_Normal.png" id="3_wk5nf"]
+[ext_resource type="Texture2D" uid="uid://dp2c6osn0k0hd" path="res://textures/Stalker/Body/Entity01_Roughness.png" id="4_vub1n"]
+
+[resource]
+resource_name = "Stalker_Body"
+albedo_texture = ExtResource("1_sbvcx")
+metallic = 1.0
+metallic_texture = ExtResource("2_764m0")
+roughness_texture = ExtResource("4_vub1n")
+normal_enabled = true
+normal_texture = ExtResource("3_wk5nf")
