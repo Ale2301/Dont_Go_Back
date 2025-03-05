@@ -2,10 +2,13 @@
 
 importer="texture"
 type="CompressedTexture2D"
+
 uid="uid://dcbanj0vrlgvo"
 path="res://.godot/imported/rojo.png-cdf7bccfbd76a3ebb5c4b465170c5094.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+
 }
 
 [deps]

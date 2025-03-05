@@ -31,6 +31,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		target_velocity.y -=gravity*delta
 	else:
+		
 		target_velocity.y = 0
 
 	# Moving the Character

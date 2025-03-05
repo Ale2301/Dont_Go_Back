@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cq3nyug3hwenk" path="res://Botones/Botones/Exit.png" id="3_q0827"]
 [ext_resource type="Texture2D" uid="uid://diupg6iysfl8w" path="res://Botones/Botones/How to play.png" id="4_qsxv7"]
 [ext_resource type="Texture2D" uid="uid://1hvy5bfy61hu" path="res://Botones/Press/Play_press.png" id="6_6rkss"]
-[ext_resource type="AudioStream" uid="uid://dd1f0fnvxqf7f" path="res://Sonidos-Musica/Click.ogg" id="6_f8ied"]
+[ext_resource type="AudioStream" uid="uid://bbqxw7h5ntq48" path="res://Sonidos-Musica/Click.ogg" id="6_f8ied"]
 [ext_resource type="Texture2D" uid="uid://cmnx3jxdj5610" path="res://Botones/Press/How to play_press.png" id="6_y5rl4"]
 [ext_resource type="Texture2D" uid="uid://cpsgu065o1u0o" path="res://Botones/Press/Exit_press.png" id="8_b7fa0"]
-[ext_resource type="AudioStream" uid="uid://xrc7ow1fua0m" path="res://Sonidos-Musica/Estatica.ogg" id="9_ueqd5"]
+[ext_resource type="AudioStream" uid="uid://b8aabteywcfh8" path="res://Sonidos-Musica/Estatica.ogg" id="9_ueqd5"]
 
 [node name="Menu" type="Node2D"]
 

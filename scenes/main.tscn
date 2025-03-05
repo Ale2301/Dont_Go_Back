@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bk2es1e43h01v"]
+[gd_scene load_steps=31 format=3 uid="uid://bk2es1e43h01v"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uw8se"]
 [ext_resource type="PackedScene" uid="uid://dsn23pn5ecvjq" path="res://scenes/StreetSceneInstance.tscn" id="2_yue7m"]
@@ -22,6 +22,8 @@
 [ext_resource type="PackedScene" uid="uid://bawmypwt5lu5" path="res://scenes/FlashLight.tscn" id="19_i2xim"]
 [ext_resource type="PackedScene" uid="uid://cy1pbu2e5vys6" path="res://scenes/Signal 1.tscn" id="20_pdc3g"]
 [ext_resource type="PackedScene" uid="uid://cijewcamdffsc" path="res://scenes/Signal 2.tscn" id="21_dba54"]
+[ext_resource type="Script" path="res://scripts/EnemyStalker.gd" id="23_6dadc"]
+[ext_resource type="PackedScene" uid="uid://dacfbmoqh7kxf" path="res://Stalker/Stalker.fbx" id="23_dk88r"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yuxok"]
 
@@ -32,19 +34,22 @@
 [sub_resource type="Environment" id="Environment_8vxwo"]
 background_mode = 2
 background_energy_multiplier = 2.18
+tonemap_mode = 3
+glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.18382, 0.20313, 0.233487, 1)
-fog_light_energy = 0.08
+fog_density = 0.3592
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.541
+volumetric_fog_density = 0.4567
 volumetric_fog_albedo = Color(0, 0, 0, 1)
-volumetric_fog_length = 100.0
+volumetric_fog_detail_spread = 1.93187
 
 [sub_resource type="FogMaterial" id="FogMaterial_s835k"]
-density = 0.03
-albedo = Color(0.489622, 0.489622, 0.489622, 1)
+density = 0.051
 height_falloff = 4.43829e-05
-edge_fade = 1.5455
+edge_fade = 3.67584
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s4k84"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_uw8se")
@@ -222,7 +227,9 @@ transform = Transform3D(-4.26108e-08, 0, 0.97482, 0, 0.97482, 0, -0.97482, 0, -4
 light_energy = 80.0
 light_specular = 2.278
 spot_range = 7.45678
+spot_attenuation = 0.0769467
 spot_angle = 30.6485
+spot_angle_attenuation = 0.267943
 
 [node name="TimerFlashlight" type="Timer" parent="Player/LightRotation"]
 wait_time = 0.037
@@ -324,8 +331,8 @@ wait_time = 0.5
 environment = SubResource("Environment_8vxwo")
 
 [node name="FogVolume" type="FogVolume" parent="WorldEnvironment"]
-transform = Transform3D(89.255, 0, 0, 0, 1, 0, 0, 0, 1, 0.399704, 1.17479, 0)
-size = Vector3(1.88984, 6.18718, 6.16696)
+transform = Transform3D(89.255, 0, 0, 0, 1, 0, 0, 0, 1, 0.428795, 1.17479, -0.210846)
+shape = 4
 material = SubResource("FogMaterial_s835k")
 
 [node name="Farola" parent="." instance=ExtResource("6_3sda4")]
@@ -504,6 +511,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4007, 0, -5.20653)
 
 [node name="Tree40" parent="TreeSpriteHandler" instance=ExtResource("17_u13b7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6447, 0, -5.20653)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2976, 37.986)
+physics_material_override = SubResource("PhysicsMaterial_s4k84")
+script = ExtResource("23_6dadc")
+
+[node name="Root Scene" parent="StaticBody3D" instance=ExtResource("23_dk88r")]
+transform = Transform3D(-4.37114e-07, 0, 10, 0, 10, 0, -10, 0, -4.37114e-07, 0, 0, 0)
 
 [connection signal="timeout" from="Player/LightRotation/TimerFlashlight" to="Player/LightRotation" method="_on_timer_flashlight_timeout"]
 [connection signal="timeout" from="HUD/MeshInstance2D/Timer" to="HUD" method="_on_timer_timeout"]

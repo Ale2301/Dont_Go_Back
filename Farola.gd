@@ -14,4 +14,3 @@ func _on_timer_timeout() -> void:
 		light.light_energy = 80
 	if rand_amt > 0.50:
 		light.light_energy = 60
-		
