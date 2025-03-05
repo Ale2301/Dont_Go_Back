@@ -44,6 +44,8 @@ func _physics_process(delta):
 				offset = offset.normalized() * SPAWN_OFFSET
 				playerPosition += offset
 		global_transform.origin = playerPosition
+		look_at(player.global_transform.origin)
+		self.rotate_object_local(Vector3.UP,PI)
 		var camera_forward = -camera.global_transform.basis.z.normalized()
 		var to_stalker = (global_transform.origin - camera.global_transform.origin).normalized()
 		var dot_value = camera_forward.dot(to_stalker)
