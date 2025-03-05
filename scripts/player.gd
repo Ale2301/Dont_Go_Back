@@ -3,7 +3,7 @@ extends CharacterBody3D
 # How fast the player moves in meters per second.
 @export var speed = 4 #Te ponen
 @export var gravity = 20
-@export var teleport_limit_x = 0.0
+@export var teleport_limit_x = 1.0
 @export var teleport_target_x = 79.24
 
 

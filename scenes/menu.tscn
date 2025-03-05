@@ -40,11 +40,11 @@ script = ExtResource("2_p8afu")
 
 [node name="Play button" type="TextureButton" parent="Buttons"]
 layout_mode = 2
-offset_left = 408.0
-offset_top = 282.0
-offset_right = 1898.0
-offset_bottom = 459.0
-scale = Vector2(0.3, 0.3)
+offset_left = 199.0
+offset_top = 175.0
+offset_right = 1689.0
+offset_bottom = 352.0
+scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("2_xtqsd")
 texture_hover = ExtResource("6_6rkss")
 
@@ -55,11 +55,11 @@ stream = ExtResource("6_f8ied")
 
 [node name="HowToPlay Button" type="TextureButton" parent="Buttons"]
 layout_mode = 2
-offset_left = 411.0
-offset_top = 348.0
-offset_right = 1879.0
-offset_bottom = 520.0
-scale = Vector2(0.3, 0.3)
+offset_left = 199.0
+offset_top = 365.0
+offset_right = 1667.0
+offset_bottom = 537.0
+scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("4_qsxv7")
 texture_hover = ExtResource("6_y5rl4")
 
@@ -68,11 +68,11 @@ stream = ExtResource("6_f8ied")
 
 [node name="Exit Button" type="TextureButton" parent="Buttons"]
 layout_mode = 2
-offset_left = 409.0
-offset_top = 419.0
-offset_right = 1877.0
-offset_bottom = 591.0
-scale = Vector2(0.3, 0.3)
+offset_left = 198.0
+offset_top = 558.0
+offset_right = 1666.0
+offset_bottom = 730.0
+scale = Vector2(0.6, 0.6)
 texture_normal = ExtResource("3_q0827")
 texture_hover = ExtResource("8_b7fa0")
 
