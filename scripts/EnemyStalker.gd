@@ -4,8 +4,8 @@ extends StaticBody3D
 
 const STALKER_DURATION = 5.0  # Secnds before Stalker kills player
 const LOOK_THRESHOLD = 3.0    # Time before stalker dissapears after looking at him
-const TIMEBETWEENSPAWNS = 3 #seconds
-const CHANCETOSPAWN = 70 #percent
+const TIMEBETWEENSPAWNS = 20 #seconds
+const CHANCETOSPAWN = 0 #percent
 const CHANCETOPHASE = 70 #percent. Chance to phase is calculated after the laugh sound
 const TIMEBETWEENSOUNDS = 3 #seconds
 const SPAWN_OFFSET = 5.0  # Distance from stalker to player
@@ -27,6 +27,8 @@ func _physics_process(delta):
 	var playerPosition = player.global_transform.origin
 	timePassed += 0.01
 	if (stalkerPaused):
+		if not $"../Player/HearthSound".playing:
+			$"../Player/HearthSound".play()
 		match placeWhereEnemySpawned:
 			1:
 				var offset = player.transform.basis.x
@@ -44,6 +46,8 @@ func _physics_process(delta):
 				offset = offset.normalized() * SPAWN_OFFSET
 				playerPosition += offset
 		global_transform.origin = playerPosition
+		look_at(player.global_transform.origin)
+		self.rotate_object_local(Vector3.UP,PI)
 		var camera_forward = -camera.global_transform.basis.z.normalized()
 		var to_stalker = (global_transform.origin - camera.global_transform.origin).normalized()
 		var dot_value = camera_forward.dot(to_stalker)
