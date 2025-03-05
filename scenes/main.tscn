@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bk2es1e43h01v"]
+[gd_scene load_steps=35 format=3 uid="uid://bk2es1e43h01v"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uw8se"]
 [ext_resource type="PackedScene" uid="uid://dsn23pn5ecvjq" path="res://scenes/StreetSceneInstance.tscn" id="2_yue7m"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://cijewcamdffsc" path="res://scenes/Signal 2.tscn" id="21_dba54"]
 [ext_resource type="Script" path="res://scripts/EnemyStalker.gd" id="23_6dadc"]
 [ext_resource type="PackedScene" uid="uid://dacfbmoqh7kxf" path="res://Stalker/Stalker.fbx" id="23_dk88r"]
+[ext_resource type="Script" path="res://scripts/ChaseEnemy.gd" id="26_dyndg"]
+[ext_resource type="AudioStream" uid="uid://b6awu5m260y1m" path="res://Sonidos-Musica/PasosMonstro.ogg" id="27_m8qr4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yuxok"]
 
@@ -51,6 +53,8 @@ height_falloff = 4.43829e-05
 edge_fade = 3.67584
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s4k84"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_85msk"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_uw8se")
@@ -526,7 +530,17 @@ script = ExtResource("23_6dadc")
 [node name="Root Scene" parent="StaticBody3D" instance=ExtResource("23_dk88r")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.0265465, 0.12874, -0.0186577)
 
-[node name="ChaseEnemy" type="StaticBody3D" parent="."]
+[node name="ChaseEnemy" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2.53516, 0, 0, 0, 1, 13.845, 1.4494, 14.5299)
+script = ExtResource("26_dyndg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ChaseEnemy"]
+mesh = SubResource("BoxMesh_85msk")
+
+[node name="ChaseEnemySteps" type="AudioStreamPlayer3D" parent="ChaseEnemy"]
+transform = Transform3D(1, 0, -3.72529e-09, 0, 0.394452, 0, 3.72529e-09, 0, 1, 0, 0, 0)
+stream = ExtResource("27_m8qr4")
+volume_db = -5.0
 
 [connection signal="timeout" from="Player/LightRotation/TimerFlashlight" to="Player/LightRotation" method="_on_timer_flashlight_timeout"]
 [connection signal="timeout" from="HUD/MeshInstance2D/Timer" to="HUD" method="_on_timer_timeout"]
