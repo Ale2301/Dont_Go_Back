@@ -6,7 +6,7 @@ extends StaticBody3D
 const ENEMY_DURATION = 3.0        # Tiempo (en segundos) antes de que el enemigo mate al jugador si es observado
 const NOT_LOOK_THRESHOLD = 3.0    # Tiempo que debe transcurrir sin ser observado para que el enemigo desaparezca
 const TIMEBETWEENSPAWNS = 15      # Intervalo entre spawns (en segundos)
-const CHANCETOSPAWN = 70           # Porcentaje de chance para iniciar la persecución (ajusta según balance)
+const CHANCETOSPAWN = 0           # Porcentaje de chance para iniciar la persecución (ajusta según balance)
 const TIMEBETWEENSOUNDS = 3       # (Si se necesita reproducir un sonido, por ejemplo)
 const SPAWN_OFFSET = 5.0          # Distancia del spawn al jugador (siempre DElante)
 

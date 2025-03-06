@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://bk2es1e43h01v"]
+[gd_scene load_steps=43 format=3 uid="uid://bk2es1e43h01v"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uw8se"]
 [ext_resource type="PackedScene" uid="uid://dsn23pn5ecvjq" path="res://scenes/StreetSceneInstance.tscn" id="2_yue7m"]
@@ -25,9 +25,14 @@
 [ext_resource type="PackedScene" uid="uid://cijewcamdffsc" path="res://scenes/Signal 2.tscn" id="21_dba54"]
 [ext_resource type="Script" path="res://scripts/EnemyStalker.gd" id="23_6dadc"]
 [ext_resource type="PackedScene" uid="uid://dacfbmoqh7kxf" path="res://Stalker/Stalker.fbx" id="23_dk88r"]
+[ext_resource type="Texture2D" uid="uid://c80l737de4p2j" path="res://textures/EnemyStalker/Enemy02_Base_Color.png" id="25_ss5rw"]
+[ext_resource type="Texture2D" uid="uid://c1uomvu1egs0a" path="res://textures/EnemyStalker/Enemy02_Emisive.png" id="26_a3mp4"]
 [ext_resource type="Script" path="res://scripts/ChaseEnemy.gd" id="26_dyndg"]
-[ext_resource type="AudioStream" uid="uid://b6awu5m260y1m" path="res://Sonidos-Musica/PasosMonstro.ogg" id="27_m8qr4"]
+[ext_resource type="AudioStream" uid="uid://bh57r8aguwm7a" path="res://Sonidos-Musica/worm-movement.ogg" id="27_sphye"]
+[ext_resource type="Texture2D" uid="uid://dt1yiaja0ilmc" path="res://textures/EnemyStalker/Enemy02_Mettalic.png" id="27_vxdpm"]
 [ext_resource type="Script" path="res://scripts/FrontEnemy.gd" id="28_773kr"]
+[ext_resource type="Texture2D" uid="uid://bigpdacp8gkdj" path="res://textures/EnemyStalker/Enemy02_Normal2.png" id="28_wufgk"]
+[ext_resource type="Texture2D" uid="uid://c4he5ge2vr6fj" path="res://textures/EnemyStalker/Enemy02_Roughness2.png" id="29_4an0m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yuxok"]
 size = Vector3(1.15778, 1, 1)
@@ -56,7 +61,19 @@ edge_fade = 3.67584
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s4k84"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_85msk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a7hxb"]
+transparency = 1
+albedo_texture = ExtResource("25_ss5rw")
+metallic = 1.0
+metallic_texture = ExtResource("27_vxdpm")
+roughness_texture = ExtResource("29_4an0m")
+emission_enabled = true
+emission_texture = ExtResource("26_a3mp4")
+normal_enabled = true
+normal_texture = ExtResource("28_wufgk")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hv3t3"]
+material = SubResource("StandardMaterial3D_a7hxb")
 
 [sub_resource type="BoxMesh" id="BoxMesh_xuu87"]
 
@@ -671,23 +688,25 @@ transform = Transform3D(0.996405, 0, -0.0847213, 0, 1, 0, 0.0847213, 0, 0.996405
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.9999, 0, -5.20653)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2976, 37.986)
+transform = Transform3D(-0.97968, 0.0728371, 0.186873, -0.178659, 0.106505, -0.97813, -0.0911471, -0.991641, -0.0913279, 95.1215, 0.971211, 2.20841)
 physics_material_override = SubResource("PhysicsMaterial_s4k84")
 script = ExtResource("23_6dadc")
 
-[node name="Root Scene" parent="StaticBody3D" instance=ExtResource("23_dk88r")]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.0265465, 0.12874, -0.0186577)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 1.27898e-13, -3.55271e-15, 0, 2.53516, 2.98023e-08, 0, 2.98023e-08, 1, 1, 0, 0)
+mesh = SubResource("PlaneMesh_hv3t3")
+skeleton = NodePath("../../ChaseEnemy")
 
 [node name="ChaseEnemy" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 2.53516, 0, 0, 0, 1, 13.845, 1.4494, 14.5299)
+transform = Transform3D(-0.0633827, 0, -0.997989, 0, 2.53516, 0, 0.997989, 0, -0.0633827, 13.845, 1.4494, 587.443)
 script = ExtResource("26_dyndg")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ChaseEnemy"]
-mesh = SubResource("BoxMesh_85msk")
+[node name="Root Scene" parent="ChaseEnemy" instance=ExtResource("23_dk88r")]
+transform = Transform3D(10, 0, 0, 0, 3.94452, 0, 0, 0, 10, 0, 0, 0)
 
 [node name="ChaseEnemySteps" type="AudioStreamPlayer3D" parent="ChaseEnemy"]
-transform = Transform3D(1, 0, -3.72529e-09, 0, 0.394452, 0, 3.72529e-09, 0, 1, 0, 0, 0)
-stream = ExtResource("27_m8qr4")
+transform = Transform3D(1, 0, 0, 0, 0.394452, 0, 0, 0, 1, 0, 0, 0)
+stream = ExtResource("27_sphye")
 volume_db = -5.0
 
 [node name="FrontEnemy" type="StaticBody3D" parent="."]
