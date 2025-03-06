@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://b36chafq883np"]
 
 [ext_resource type="VideoStream" path="res://Hud-Actualizado.ogv" id="1_qqp1t"]
-[ext_resource type="Script" path="res://scenes/Buttons.gd" id="2_p8afu"]
+[ext_resource type="Script" path="res://scripts/Buttons.gd" id="2_p8afu"]
 [ext_resource type="Texture2D" uid="uid://dkfpyresiq14" path="res://Botones/Botones/Play.png" id="2_xtqsd"]
 [ext_resource type="Texture2D" uid="uid://cq3nyug3hwenk" path="res://Botones/Botones/Exit.png" id="3_q0827"]
 [ext_resource type="Texture2D" uid="uid://diupg6iysfl8w" path="res://Botones/Botones/How to play.png" id="4_qsxv7"]

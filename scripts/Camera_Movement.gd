@@ -3,6 +3,7 @@ extends Camera3D
 var original_camera_rotation: Vector3
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	original_camera_rotation = rotation_degrees
@@ -12,6 +13,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	handle_camera_rotation(delta)
+	
 
 func handle_camera_rotation(delta):
 	if Input.is_action_pressed("look_back"):

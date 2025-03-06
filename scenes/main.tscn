@@ -9,20 +9,20 @@
 [ext_resource type="PackedScene" uid="uid://30u2dtnmw38p" path="res://Farola.tscn" id="6_3sda4"]
 [ext_resource type="PackedScene" uid="uid://d0x2dhf6w6lpq" path="res://scenes/HUD.tscn" id="6_soan6"]
 [ext_resource type="Script" path="res://Farola.gd" id="7_dy13o"]
-[ext_resource type="Script" path="res://scenes/HUD.gd" id="7_v4n7k"]
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="7_v4n7k"]
 [ext_resource type="Texture2D" uid="uid://dcbanj0vrlgvo" path="res://rojo.png" id="8_1b5gv"]
 [ext_resource type="AudioStream" uid="uid://ctstcnton4a1t" path="res://Sonidos-Musica/Viento.ogg" id="10_0ndkp"]
 [ext_resource type="AudioStream" uid="uid://cope63hqt18jv" path="res://Sonidos-Musica/Grillos.ogg" id="10_71u8s"]
-[ext_resource type="Script" path="res://scenes/Irons.gd" id="11_euomm"]
+[ext_resource type="Script" path="res://scripts/Irons.gd" id="11_euomm"]
 [ext_resource type="AudioStream" uid="uid://byfmw2cr7odun" path="res://Sonidos-Musica/Buho.ogg" id="11_ibu0g"]
 [ext_resource type="AudioStream" uid="uid://o2d1d0fnmloc" path="res://Sonidos-Musica/CorazonAcelerado.ogg" id="13_rwxrr"]
-[ext_resource type="Script" path="res://scenes/Owl.gd" id="14_ro45c"]
+[ext_resource type="Script" path="res://scripts/Owl.gd" id="14_ro45c"]
 [ext_resource type="PackedScene" uid="uid://2ic1xv015xvr" path="res://textures/PoliceCar/PoliceCarBase/PoliceCar.fbx" id="16_upb55"]
-[ext_resource type="PackedScene" uid="uid://dlncakfb16vw7" path="res://scenes/Tree.tscn" id="17_u13b7"]
-[ext_resource type="PackedScene" uid="uid://dm4pqx7y2i0pk" path="res://scenes/Floor.tscn" id="18_pouvb"]
-[ext_resource type="PackedScene" uid="uid://bawmypwt5lu5" path="res://scenes/FlashLight.tscn" id="19_i2xim"]
-[ext_resource type="PackedScene" uid="uid://cy1pbu2e5vys6" path="res://scenes/Signal 1.tscn" id="20_pdc3g"]
-[ext_resource type="PackedScene" uid="uid://cijewcamdffsc" path="res://scenes/Signal 2.tscn" id="21_dba54"]
+[ext_resource type="PackedScene" path="res://scenes/Tree.tscn" id="17_u13b7"]
+[ext_resource type="PackedScene" path="res://scenes/Floor.tscn" id="18_pouvb"]
+[ext_resource type="PackedScene" path="res://scenes/FlashLight.tscn" id="19_i2xim"]
+[ext_resource type="PackedScene" path="res://scenes/Signal 1.tscn" id="20_pdc3g"]
+[ext_resource type="PackedScene" path="res://scenes/Signal 2.tscn" id="21_dba54"]
 [ext_resource type="Script" path="res://scripts/EnemyStalker.gd" id="23_6dadc"]
 [ext_resource type="PackedScene" uid="uid://dacfbmoqh7kxf" path="res://Stalker/Stalker.fbx" id="23_dk88r"]
 [ext_resource type="Script" path="res://scripts/ChaseEnemy.gd" id="26_dyndg"]
@@ -266,7 +266,7 @@ stream = ExtResource("5_uwnv0")
 volume_db = -20.0
 
 [node name="PlayerCamera" type="Camera3D" parent="Player"]
-transform = Transform3D(-4.26108e-08, 0, 0.974823, 0, 0.974822, 0, -0.974822, 0, -4.26108e-08, 0.00495911, 0.76132, 0.000971846)
+transform = Transform3D(-4.26108e-08, 0, 0.97482, 0, 0.97482, 0, -0.97482, 0, -4.26108e-08, -0.184906, 0.596954, 0.0259664)
 script = ExtResource("4_slnx7")
 
 [node name="LightRotation" type="Node3D" parent="Player"]
@@ -378,7 +378,6 @@ mesh = SubResource("SphereMesh_vtlrr")
 texture = ExtResource("8_1b5gv")
 
 [node name="Timer" type="Timer" parent="HUD/MeshInstance2D"]
-wait_time = 0.5
 autostart = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
