@@ -5,9 +5,9 @@ extends StaticBody3D
 const STALKER_DURATION = 5.0  # Secnds before Stalker kills player
 const LOOK_THRESHOLD = 3.0    # Time before stalker dissapears after looking at him
 const TIMEBETWEENSPAWNS = 20 #seconds
-const CHANCETOSPAWN = 0 #percent
+const CHANCETOSPAWN = 40 #percent
 const CHANCETOPHASE = 70 #percent. Chance to phase is calculated after the laugh sound
-const TIMEBETWEENSOUNDS = 3 #seconds
+const TIMEBETWEENSOUNDS = 8 #seconds
 const SPAWN_OFFSET = 5.0  # Distance from stalker to player
 var stalkerTimer = STALKER_DURATION
 var timeLookedAt = 0.0
