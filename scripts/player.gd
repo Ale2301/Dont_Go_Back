@@ -1,16 +1,34 @@
 extends CharacterBody3D
 
+const PLAYER_FREQ = 2.0
+const PLAYER_AMP = 0.08
+var t_player = 0.0
+
 # How fast the player moves in meters per second.
-@export var speed = 4 #Te ponen
+@export var speed = 4.0 #Te ponen
 @export var gravity = 20
 @export var teleport_limit_x = 0.0
 @export var teleport_target_x = 79.24
 
+var isSprint = false
+var speedWalk = 4.0
+var speedRun = 7.0
 
 const WALKING = preload("res://Sonidos-Musica/PasosDelPersonajeJugable.ogg")
 @onready var AudioFootStep = $AudioStreamPlayer3D
 
+
 func _physics_process(delta):
+	
+	if Input.is_action_pressed("Sprint"):
+		isSprint = true
+		speed = speedRun
+	else:
+		isSprint = false
+		speed = speedWalk
+
+
+
 	var direction = Vector3.ZERO
 	var target_velocity = Vector3.ZERO
 	if Input.is_action_pressed("move_forward"):
@@ -27,18 +45,25 @@ func _physics_process(delta):
 		if AudioFootStep.playing:
 			AudioFootStep.stop()
 		
-	
 	if not is_on_floor():
 		target_velocity.y -=gravity*delta
 	else:
 		
 		target_velocity.y = 0
-
+	
+	
+	
 	# Moving the Character
 	velocity = target_velocity
 	move_and_slide()
 	
 	if global_transform.origin.x <= teleport_limit_x:
 		global_transform.origin.x = teleport_target_x
+		
+		
+
+
+
+
 
 

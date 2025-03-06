@@ -21,13 +21,13 @@ func get_time_formatted() -> String:
 	return "%02d:%02d.%03d" % [minutes, seconds, msec]
 
 
-
-
 func _on_timer_timeout():
-	$MeshInstance2D.visible = false
-	$MeshInstance2D/Timer2.start()
-
-
-func _on_timer_2_timeout():
-	$MeshInstance2D.visible = true
 	$MeshInstance2D/Timer.start()
+	if $MeshInstance2D.visible:
+		$MeshInstance2D.visible = false
+	else :
+		$MeshInstance2D.visible = true
+
+
+
+
