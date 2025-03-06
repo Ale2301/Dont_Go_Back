@@ -19,6 +19,33 @@ var speedRun = 7.0
 
 const WALKING = preload("res://Sonidos-Musica/PasosDelPersonajeJugable.ogg")
 @onready var AudioFootStep = $AudioStreamPlayer3D
+@onready var camera = $PlayerCamera
+var original_camera_position = Vector3()
+var balance_amount = 0.1
+var balance_speed = 5.0
+var time_passed = 0.0
+
+var is_dead = false
+
+func _ready():
+	original_camera_position = camera.position
+
+func _process(delta):
+	if is_dead:
+		camera.position.y -= 9.8 * delta
+		return
+	
+	var direction = Vector3()
+	if Input.is_action_pressed("move_forward"):
+		direction.z -= 1
+	
+	if direction.z < 0:
+		time_passed += delta
+		var balance = sin(time_passed * balance_speed) * balance_amount
+		camera.position.y = original_camera_position.y + balance
+	else:
+		camera.position.y = original_camera_position.y
+		
 
 func _physics_process(delta):
 	
@@ -28,8 +55,6 @@ func _physics_process(delta):
 	else:
 		isSprint = false
 		speed = speedWalk
-
-
 
 	var direction = Vector3.ZERO
 	var target_velocity = Vector3.ZERO

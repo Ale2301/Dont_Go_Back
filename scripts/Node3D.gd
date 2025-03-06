@@ -3,6 +3,7 @@ extends Node3D
 @onready var flashlight = $FlashLight
 @onready var timer = $TimerFlashlight
 
+var original_flashlight_rotation: Vector3
 var original_light_rotation: Vector3
 var mouse_sensitivity_horizontal = 0.01
 var mouse_sensitivity_vertical = 0.01
@@ -30,6 +31,9 @@ func _physics_process(delta):
 		rotation_degrees.y = original_light_rotation.y + 90
 	if Input.is_action_just_pressed("move_forward"):
 		rotation_degrees = original_light_rotation
+	
+
+
 
 func _input(event):
 	if event is InputEventMouseMotion:
