@@ -1,5 +1,6 @@
 extends CharacterBody3D
 @onready var player = get_node("../Player")
+
 # Called when the node enters the scene tree for the first time.
 const TIMEBETWEENSPAWNS = 30 #seconds
 const CHANCETOSPAWN = 50 #percent
@@ -11,7 +12,9 @@ const COLLISION_THRESHOLD = 1.1
 var isSpawned = false
 var timePassed = 0.0
 var spawn_position: Vector3
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _physics_process(delta):
 	if not isSpawned:
 		timePassed += 0.1

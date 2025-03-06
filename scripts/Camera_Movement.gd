@@ -1,11 +1,15 @@
 extends Camera3D
 @export var rotation_speed = 40
+
 var original_camera_rotation: Vector3
 
+
+@onready var player = get_parent()
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	original_camera_rotation = rotation_degrees
 
 
@@ -14,6 +18,7 @@ func _ready():
 func _process(delta):
 	handle_camera_rotation(delta)
 	
+
 
 func handle_camera_rotation(delta):
 	if Input.is_action_pressed("look_back"):
@@ -24,3 +29,7 @@ func handle_camera_rotation(delta):
 		rotation_degrees.y = original_camera_rotation.y + 90
 	if Input.is_action_pressed("move_forward"):
 		rotation_degrees = original_camera_rotation
+		
+		
+
+

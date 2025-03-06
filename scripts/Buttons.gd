@@ -5,6 +5,7 @@ extends Control
 
 func _on_play_button_pressed():
 	Functions.load_screen_to_scene("res://scenes/main.tscn")
+	$"../VideoStreamPlayer/AudioStreamPlayer2D".stop()
 
 
 func _on_exit_button_pressed():

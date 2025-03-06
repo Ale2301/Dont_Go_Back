@@ -1,9 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkkt42e2c30kd"]
+[gd_scene load_steps=9 format=3 uid="uid://dkkt42e2c30kd"]
 
 [ext_resource type="VideoStream" path="res://Game-Over2.ogv" id="1_6mrag"]
+[ext_resource type="Script" path="res://scripts/death_screen.gd" id="1_qmfyc"]
 [ext_resource type="AudioStream" uid="uid://b8aabteywcfh8" path="res://Sonidos-Musica/Estatica.ogg" id="2_pwo8i"]
+[ext_resource type="Texture2D" uid="uid://bd20jjmvghjgy" path="res://Botones/Botones/Menu.png" id="4_1t80b"]
+[ext_resource type="Texture2D" uid="uid://piqmmwn4rin2" path="res://Botones/Botones/Restar.png" id="5_hd6np"]
+[ext_resource type="Texture2D" uid="uid://dtfsay4loudcl" path="res://Botones/Botones/Menu_press.png" id="5_m1h2a"]
+[ext_resource type="AudioStream" uid="uid://b75pso2213q" path="res://Sounds/Click.ogg" id="6_0xp4u"]
+[ext_resource type="Texture2D" uid="uid://dmok0p07hnrat" path="res://Botones/Botones/Restar_press.png" id="8_f36ge"]
 
 [node name="DeathScreen" type="Node2D"]
+script = ExtResource("1_qmfyc")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_right = 40.0
@@ -16,3 +23,36 @@ loop = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="VideoStreamPlayer"]
 stream = ExtResource("2_pwo8i")
 autoplay = true
+
+[node name="MenuButton" type="TextureButton" parent="."]
+offset_left = -42.0
+offset_top = 620.0
+offset_right = 1426.0
+offset_bottom = 792.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("4_1t80b")
+texture_hover = ExtResource("5_m1h2a")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="MenuButton"]
+position = Vector2(105, -1550)
+scale = Vector2(2.5, 2.5)
+stream = ExtResource("6_0xp4u")
+
+[node name="RestartButton" type="TextureButton" parent="."]
+offset_left = 731.0
+offset_top = 615.0
+offset_right = 2199.0
+offset_bottom = 787.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("5_hd6np")
+texture_hover = ExtResource("8_f36ge")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RestartButton"]
+position = Vector2(-1827.5, -1537.5)
+scale = Vector2(2.5, 2.5)
+stream = ExtResource("6_0xp4u")
+
+[connection signal="mouse_entered" from="MenuButton" to="." method="_on_menu_button_mouse_entered"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="mouse_entered" from="RestartButton" to="." method="_on_restart_button_mouse_entered"]
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
