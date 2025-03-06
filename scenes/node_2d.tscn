@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp7fdsoffei6p"]
+
+[ext_resource type="Script" path="res://scripts/node_2d.gd" id="1_yee3r"]
+[ext_resource type="VideoStream" path="res://Loading.ogv" id="2_86ht4"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_yee3r")
+next_scene_path = "res://scenes/main.tscn"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.668027, 0.665823)
+stream = ExtResource("2_86ht4")
+autoplay = true
+loop = true

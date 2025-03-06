@@ -27,8 +27,6 @@ func _physics_process(delta):
 		isSprint = false
 		speed = speedWalk
 
-
-
 	var direction = Vector3.ZERO
 	var target_velocity = Vector3.ZERO
 	if Input.is_action_pressed("move_forward"):

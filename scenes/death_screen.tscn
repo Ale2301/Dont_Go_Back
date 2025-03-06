@@ -1,12 +1,18 @@
-[gd_scene format=3 uid="uid://dkkt42e2c30kd"]
+[gd_scene load_steps=3 format=3 uid="uid://dkkt42e2c30kd"]
+
+[ext_resource type="VideoStream" path="res://Game-Over2.ogv" id="1_6mrag"]
+[ext_resource type="AudioStream" uid="uid://b8aabteywcfh8" path="res://Sonidos-Musica/Estatica.ogg" id="2_pwo8i"]
 
 [node name="DeathScreen" type="Node2D"]
 
-[node name="DeathText" type="Label" parent="."]
-offset_right = 1265.0
-offset_bottom = 728.0
-theme_override_font_sizes/font_size = 90
-text = "Tas morido
-"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.667736, 0.662821)
+stream = ExtResource("1_6mrag")
+autoplay = true
+loop = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="VideoStreamPlayer"]
+stream = ExtResource("2_pwo8i")
+autoplay = true
