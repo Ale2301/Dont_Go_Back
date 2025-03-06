@@ -1,8 +1,8 @@
 extends CharacterBody3D
 @onready var player = get_node("../Player")
 # Called when the node enters the scene tree for the first time.
-const TIMEBETWEENSPAWNS = 3 #seconds
-const CHANCETOSPAWN = 70 #percent
+const TIMEBETWEENSPAWNS = 30 #seconds
+const CHANCETOSPAWN = 50 #percent
 const TIMEBETWEENSOUNDS = 0.4 #seconds
 const CHASE_SPEED = 4.0
 const ESCAPE_DISTANCE = 30

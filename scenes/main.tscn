@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bk2es1e43h01v"]
+[gd_scene load_steps=37 format=3 uid="uid://bk2es1e43h01v"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uw8se"]
 [ext_resource type="PackedScene" uid="uid://dsn23pn5ecvjq" path="res://scenes/StreetSceneInstance.tscn" id="2_yue7m"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://dacfbmoqh7kxf" path="res://Stalker/Stalker.fbx" id="23_dk88r"]
 [ext_resource type="Script" path="res://scripts/ChaseEnemy.gd" id="26_dyndg"]
 [ext_resource type="AudioStream" uid="uid://b6awu5m260y1m" path="res://Sonidos-Musica/PasosMonstro.ogg" id="27_m8qr4"]
+[ext_resource type="Script" path="res://scripts/FrontEnemy.gd" id="28_773kr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yuxok"]
 size = Vector3(1.15778, 1, 1)
@@ -56,6 +57,8 @@ edge_fade = 3.67584
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s4k84"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_85msk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xuu87"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_uw8se")
@@ -687,6 +690,15 @@ mesh = SubResource("BoxMesh_85msk")
 transform = Transform3D(1, 0, -3.72529e-09, 0, 0.394452, 0, 3.72529e-09, 0, 1, 0, 0, 0)
 stream = ExtResource("27_m8qr4")
 volume_db = -5.0
+
+[node name="FrontEnemy" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 2.53516, 0, 0, 0, 1, 63.4713, 17.4148, 52.5159)
+physics_material_override = SubResource("PhysicsMaterial_s4k84")
+script = ExtResource("28_773kr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FrontEnemy"]
+transform = Transform3D(1.38071, 0, 0, 0, 1.64214, 0, 0, 0, 1.64214, 0, 0, 0)
+mesh = SubResource("BoxMesh_xuu87")
 
 [connection signal="timeout" from="Player/LightRotation/TimerFlashlight" to="Player/LightRotation" method="_on_timer_flashlight_timeout"]
 [connection signal="timeout" from="HUD/MeshInstance2D/Timer" to="HUD" method="_on_timer_timeout"]
