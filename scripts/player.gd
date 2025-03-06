@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+signal change_miles(new_text: String)
+
 const PLAYER_FREQ = 2.0
 const PLAYER_AMP = 0.08
 var t_player = 0.0
@@ -10,13 +12,13 @@ var t_player = 0.0
 @export var teleport_limit_x = 1.0
 @export var teleport_target_x = 79.24
 
+
 var isSprint = false
 var speedWalk = 4.0
 var speedRun = 7.0
 
 const WALKING = preload("res://Sonidos-Musica/PasosDelPersonajeJugable.ogg")
 @onready var AudioFootStep = $AudioStreamPlayer3D
-
 @onready var camera = $PlayerCamera
 var original_camera_position = Vector3()
 var balance_amount = 0.1
@@ -84,7 +86,9 @@ func _physics_process(delta):
 	
 	if global_transform.origin.x <= teleport_limit_x:
 		global_transform.origin.x = teleport_target_x
-		
+		emit_signal("change_miles", str(round(RandomNumberGenerator.new().randf_range(10,90))))
 
-func die():
-	is_dead = true
+
+
+
+
