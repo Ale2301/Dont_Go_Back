@@ -7,7 +7,7 @@ var t_player = 0.0
 # How fast the player moves in meters per second.
 @export var speed = 4.0 #Te ponen
 @export var gravity = 20
-@export var teleport_limit_x = 0.0
+@export var teleport_limit_x = 1.0
 @export var teleport_target_x = 79.24
 
 var isSprint = false
