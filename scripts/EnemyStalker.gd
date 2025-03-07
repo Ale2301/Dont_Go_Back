@@ -31,6 +31,8 @@ func _physics_process(delta):
 	var playerPosition = player.global_transform.origin
 	timePassed += 0.01
 	if (stalkerPaused):
+		if material is ShaderMaterial:
+			material.set_shader_parameter("tape_wave_amount", 0.030)
 		if not $"../Player/HearthSound".playing:
 			$"../Player/HearthSound".play()
 		if not $"WhispersSound".playing:
@@ -41,22 +43,16 @@ func _physics_process(delta):
 				offset.y = 0
 				offset = offset.normalized() * SPAWN_OFFSET
 				playerPosition += offset
-				if material is ShaderMaterial:
-					material.set_shader_parameter("tape_wave_amount", 0.030)
 			2:
 				var offset = player.transform.basis.z
 				offset.y = 0
 				offset = offset.normalized() * SPAWN_OFFSET
 				playerPosition += offset
-				if material is ShaderMaterial:
-					material.set_shader_parameter("tape_wave_amount", 0.030)
 			3:
 				var offset = -player.transform.basis.z
 				offset.y = 0
 				offset = offset.normalized() * SPAWN_OFFSET
 				playerPosition += offset
-				if material is ShaderMaterial:
-					material.set_shader_parameter("tape_wave_amount", 0.030)
 		global_transform.origin = playerPosition
 		look_at(player.global_transform.origin)
 		self.rotate_object_local(Vector3.UP,PI)
