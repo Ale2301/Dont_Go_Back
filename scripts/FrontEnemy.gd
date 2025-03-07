@@ -1,6 +1,7 @@
 extends StaticBody3D
 @onready var player = get_node("../Player")
 @onready var camera = player.get_node("PlayerCamera")
+@onready var shader_camera = $"../HUD/ColorRect"
 
 # Parámetros
 const ENEMY_DURATION = 3.0        # Tiempo (en segundos) antes de que el enemigo mate al jugador si es observado
@@ -22,6 +23,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	var material = shader_camera.material
 	var playerPosition = player.global_transform.origin
 	timePassed += delta
 	
@@ -68,6 +70,8 @@ func _physics_process(delta):
 		if timePassed >= TIMEBETWEENSPAWNS:
 			print("Trying to spawn enemy in front...")
 			if RandomNumberGenerator.new().randf_range(0,100) < CHANCETOSPAWN:
+				if material is ShaderMaterial:
+					material.get_shader_parameter("tape_wave_amount", 0.025)
 				print("Enemy spawned and started to follow")
 				isSpawned = true
 				enemyPaused = true
@@ -77,6 +81,7 @@ func _physics_process(delta):
 	elif timePassed >= TIMEBETWEENSOUNDS and not enemyPaused:
 		# (Si deseas agregar algún sonido o fase de spawn similar al stalker, este bloque es opcional)
 		timePassed = 0.0
+
 
 func restore_vars():
 	# Reinicia las variables para que el enemigo desaparezca (o se re-spawnee en otro ciclo)

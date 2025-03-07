@@ -1,6 +1,7 @@
 extends StaticBody3D
 @onready var player = get_node("../Player")
 @onready var camera = player.get_node("../Player/PlayerCamera")
+@onready var shader_camera = $"../HUD/ColorRect"
 
 const STALKER_DURATION = 5.0  # Secnds before Stalker kills player
 const LOOK_THRESHOLD = 3.0    # Time before stalker dissapears after looking at him
@@ -24,6 +25,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	var material = shader_camera.material
 	var playerPosition = player.global_transform.origin
 	timePassed += 0.01
 	if (stalkerPaused):
@@ -35,16 +37,22 @@ func _physics_process(delta):
 				offset.y = 0
 				offset = offset.normalized() * SPAWN_OFFSET
 				playerPosition += offset
+				if material is ShaderMaterial:
+					material.set_shader_parameter("tape_wave_amount", 0.025)
 			2:
 				var offset = player.transform.basis.z
 				offset.y = 0
 				offset = offset.normalized() * SPAWN_OFFSET
 				playerPosition += offset
+				if material is ShaderMaterial:
+					material.set_shader_parameter("tape_wave_amount", 0.025)
 			3:
 				var offset = -player.transform.basis.z
 				offset.y = 0
 				offset = offset.normalized() * SPAWN_OFFSET
 				playerPosition += offset
+				if material is ShaderMaterial:
+					material.set_shader_parameter("tape_wave_amount", 0.025)
 		global_transform.origin = playerPosition
 		look_at(player.global_transform.origin)
 		self.rotate_object_local(Vector3.UP,PI)
@@ -58,6 +66,7 @@ func _physics_process(delta):
 			stalkerTimer -= 0.01
 			print("Time remaining for death: ",stalkerTimer)
 		if timeLookedAt >= LOOK_THRESHOLD:
+			material.set_shader_parameter("tape_wave_amount", 0.003)
 			print ("Stalker dissapears..")
 			restore_vars()
 		elif stalkerTimer <= 0:

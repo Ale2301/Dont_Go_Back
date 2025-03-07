@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://bk2es1e43h01v"]
+[gd_scene load_steps=47 format=3 uid="uid://bk2es1e43h01v"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uw8se"]
 [ext_resource type="PackedScene" uid="uid://dsn23pn5ecvjq" path="res://scenes/StreetSceneInstance.tscn" id="2_yue7m"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://cope63hqt18jv" path="res://Sonidos-Musica/Grillos.ogg" id="10_71u8s"]
 [ext_resource type="Script" path="res://scripts/Irons.gd" id="11_euomm"]
 [ext_resource type="AudioStream" uid="uid://byfmw2cr7odun" path="res://Sonidos-Musica/Buho.ogg" id="11_ibu0g"]
+[ext_resource type="Shader" path="res://Shader/VHS.gdshader" id="12_cldr3"]
 [ext_resource type="AudioStream" uid="uid://o2d1d0fnmloc" path="res://Sonidos-Musica/CorazonAcelerado.ogg" id="13_rwxrr"]
 [ext_resource type="Script" path="res://scripts/Owl.gd" id="14_ro45c"]
 [ext_resource type="PackedScene" uid="uid://2ic1xv015xvr" path="res://textures/PoliceCar/PoliceCarBase/PoliceCar.fbx" id="16_upb55"]
@@ -64,6 +65,13 @@ dof_blur_amount = 0.11
 [sub_resource type="CylinderMesh" id="CylinderMesh_lffgm"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_vtlrr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dtdgk"]
+shader = ExtResource("12_cldr3")
+shader_parameter/tape_wave_amount = 0.003
+shader_parameter/tape_crease_amount = 2.5
+shader_parameter/color_displacement = 1.0
+shader_parameter/lines_velocity = 0.1
 
 [sub_resource type="Environment" id="Environment_8vxwo"]
 background_mode = 2
@@ -248,6 +256,11 @@ texture = ExtResource("8_1b5gv")
 
 [node name="Timer" type="Timer" parent="HUD/MeshInstance2D"]
 autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+material = SubResource("ShaderMaterial_dtdgk")
+offset_right = 1279.0
+offset_bottom = 722.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_8vxwo")
