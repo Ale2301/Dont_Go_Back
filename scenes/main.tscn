@@ -18,6 +18,7 @@
 [ext_resource type="AudioStream" uid="uid://cope63hqt18jv" path="res://Sonidos-Musica/Grillos.ogg" id="10_71u8s"]
 [ext_resource type="Script" path="res://scripts/Irons.gd" id="11_euomm"]
 [ext_resource type="AudioStream" uid="uid://byfmw2cr7odun" path="res://Sonidos-Musica/Buho.ogg" id="11_ibu0g"]
+[ext_resource type="Shader" path="res://Shader/VHS.gdshader" id="12_cldr3"]
 [ext_resource type="AudioStream" uid="uid://o2d1d0fnmloc" path="res://Sonidos-Musica/CorazonAcelerado.ogg" id="13_rwxrr"]
 [ext_resource type="Script" path="res://scripts/Owl.gd" id="14_ro45c"]
 [ext_resource type="PackedScene" uid="uid://2ic1xv015xvr" path="res://textures/PoliceCar/PoliceCarBase/PoliceCar.fbx" id="16_upb55"]
@@ -51,15 +52,16 @@ size = Vector3(1.15778, 1, 1)
 
 [sub_resource type="Environment" id="Environment_ravrf"]
 tonemap_mode = 3
-tonemap_exposure = 0.06
-tonemap_white = 0.83
+tonemap_exposure = 0.16
+tonemap_white = 16.0
 ssr_enabled = true
-ssr_fade_in = 4.63649
-ssr_fade_out = 3.86374
+ssr_fade_in = 0.848529
+ssr_fade_out = 1.6245
 ssao_radius = 0.01
 ssil_radius = 4.91
 glow_enabled = true
-glow_intensity = 0.45
+glow_intensity = 0.0
+glow_strength = 0.0
 glow_blend_mode = 1
 glow_hdr_scale = 2.08
 glow_hdr_luminance_cap = 20.08
@@ -68,15 +70,22 @@ glow_hdr_luminance_cap = 20.08
 exposure_multiplier = 0.326
 auto_exposure_scale = 0.01
 dof_blur_far_enabled = true
-dof_blur_far_distance = 496.5
+dof_blur_far_distance = 15.92
 dof_blur_near_enabled = true
-dof_blur_near_distance = 1.13
+dof_blur_near_distance = 1.03
 dof_blur_near_transition = -1.0
 dof_blur_amount = 0.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lffgm"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_vtlrr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dtdgk"]
+shader = ExtResource("12_cldr3")
+shader_parameter/tape_wave_amount = 0.003
+shader_parameter/tape_crease_amount = 2.5
+shader_parameter/color_displacement = 1.0
+shader_parameter/lines_velocity = 0.1
 
 [sub_resource type="Environment" id="Environment_8vxwo"]
 background_mode = 2
@@ -285,6 +294,11 @@ texture = ExtResource("8_1b5gv")
 
 [node name="Timer" type="Timer" parent="HUD/MeshInstance2D"]
 autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+material = SubResource("ShaderMaterial_dtdgk")
+offset_right = 1279.0
+offset_bottom = 722.0
 
 [node name="InformativeEnemyText" type="Label" parent="HUD"]
 offset_left = 50.0

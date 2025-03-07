@@ -1,6 +1,7 @@
 extends StaticBody3D
 @onready var player = get_node("../Player")
 @onready var camera = player.get_node("../Player/PlayerCamera")
+@onready var shader_camera = $"../HUD/ColorRect"
 @onready var stalkerLaughSound = player.get_node("../Player/LaughSound")
 @onready var labelInfo = get_node("../HUD/InformativeEnemyText")
 
@@ -26,9 +27,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	var material = shader_camera.material
 	var playerPosition = player.global_transform.origin
 	timePassed += 0.01
 	if (stalkerPaused):
+		if material is ShaderMaterial:
+			material.set_shader_parameter("tape_wave_amount", 0.030)
 		if not $"../Player/HearthSound".playing:
 			$"../Player/HearthSound".play()
 		if not $"WhispersSound".playing:
@@ -62,6 +66,9 @@ func _physics_process(delta):
 			stalkerTimer -= 0.01
 			print("Time remaining for death: ",stalkerTimer)
 		if timeLookedAt >= LOOK_THRESHOLD:
+			$WhispersSound.stop()
+			$"../Player/HearthSound".stop()
+			material.set_shader_parameter("tape_wave_amount", 0.003)
 			print ("Stalker dissapears..")
 			restore_vars()
 		elif stalkerTimer <= 0:
