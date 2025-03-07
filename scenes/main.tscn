@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bk2es1e43h01v"]
+[gd_scene load_steps=60 format=3 uid="uid://bk2es1e43h01v"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_uw8se"]
 [ext_resource type="PackedScene" uid="uid://dsn23pn5ecvjq" path="res://scenes/StreetSceneInstance.tscn" id="2_yue7m"]
@@ -199,6 +199,8 @@ spot_angle_attenuation = 0.267943
 [node name="TimerFlashlight" type="Timer" parent="Player/LightRotation"]
 wait_time = 0.037
 autostart = true
+
+[node name="Timer" type="Timer" parent="Player"]
 
 [node name="PlaceholderThings" type="StaticBody3D" parent="."]
 transform = Transform3D(1.02939, 0, 0, 0, 1.02939, 0, 0, 0, 1.02939, 84.1556, 2.71483, -0.0712345)
@@ -838,6 +840,8 @@ transform = Transform3D(0.996405, 0, -0.0847213, 0, 1, 0, 0.0847213, 0, 0.996405
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.9999, 0, -5.20653)
 
 [connection signal="timeout" from="Player/LightRotation/TimerFlashlight" to="Player/LightRotation" method="_on_timer_flashlight_timeout"]
+[connection signal="timeout" from="Player/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Player/Timer" to="Player" method="_on_timer_timeout"]
 [connection signal="timeout" from="HUD/MeshInstance2D/Timer" to="HUD" method="_on_timer_timeout"]
 [connection signal="timeout" from="Irons/Timer" to="Irons" method="_on_timer_timeout"]
 [connection signal="timeout" from="Owl/Timer" to="Owl" method="_on_timer_timeout"]

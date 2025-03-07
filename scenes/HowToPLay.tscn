@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt1cowoupf7pn"]
+
+[ext_resource type="Script" path="res://scripts/HowToPLay.gd" id="1_aoc4r"]
+[ext_resource type="Texture2D" uid="uid://dqsboctrv0lp2" path="res://Tutooo.png" id="2_clam1"]
+[ext_resource type="Texture2D" uid="uid://bd20jjmvghjgy" path="res://Botones/Botones/Menu.png" id="3_5kjvn"]
+[ext_resource type="Texture2D" uid="uid://dtfsay4loudcl" path="res://Botones/Botones/Menu_press.png" id="4_st8hx"]
+[ext_resource type="AudioStream" uid="uid://b75pso2213q" path="res://Sounds/Click.ogg" id="5_ntshb"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_aoc4r")
+
+[node name="Tutooo" type="Sprite2D" parent="."]
+position = Vector2(639.625, 362)
+scale = Vector2(0.667057, 0.668518)
+texture = ExtResource("2_clam1")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 866.0
+offset_top = 34.0
+offset_right = 2334.0
+offset_bottom = 206.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_5kjvn")
+texture_hover = ExtResource("4_st8hx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="TextureButton"]
+position = Vector2(-2886.67, -113.333)
+scale = Vector2(3.33333, 3.33333)
+stream = ExtResource("5_ntshb")
+
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

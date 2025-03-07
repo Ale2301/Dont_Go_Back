@@ -82,5 +82,6 @@ stream = ExtResource("6_f8ied")
 [connection signal="mouse_entered" from="Buttons/Play button" to="Buttons" method="_on_play_button_mouse_entered"]
 [connection signal="pressed" from="Buttons/Play button" to="Buttons" method="_on_play_button_pressed"]
 [connection signal="mouse_entered" from="Buttons/HowToPlay Button" to="Buttons" method="_on_how_to_play_button_mouse_entered"]
+[connection signal="pressed" from="Buttons/HowToPlay Button" to="Buttons" method="_on_how_to_play_button_pressed"]
 [connection signal="mouse_entered" from="Buttons/Exit Button" to="Buttons" method="_on_exit_button_mouse_entered"]
 [connection signal="pressed" from="Buttons/Exit Button" to="Buttons" method="_on_exit_button_pressed"]
