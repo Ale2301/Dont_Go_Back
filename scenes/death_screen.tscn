@@ -24,6 +24,14 @@ loop = true
 stream = ExtResource("2_pwo8i")
 autoplay = true
 
+[node name="LongFootage" type="Label" parent="VideoStreamPlayer"]
+layout_mode = 0
+offset_left = 889.573
+offset_top = 81.47
+offset_right = 1804.57
+offset_bottom = 306.47
+theme_override_font_sizes/font_size = 70
+
 [node name="MenuButton" type="TextureButton" parent="."]
 offset_left = -42.0
 offset_top = 620.0

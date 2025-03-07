@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dp7fdsoffei6p"]
+[gd_scene load_steps=3 format=3 uid="uid://dp7fdsoffei6p"]
 
 [ext_resource type="Script" path="res://scripts/node_2d.gd" id="1_yee3r"]
 [ext_resource type="VideoStream" path="res://Loading.ogv" id="2_86ht4"]
-[ext_resource type="AudioStream" uid="uid://c1odsw61bg67e" path="res://Sounds/CasetteAndando.ogg" id="3_nqvjw"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_yee3r")
@@ -17,5 +16,4 @@ autoplay = true
 loop = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_nqvjw")
 autoplay = true

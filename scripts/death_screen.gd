@@ -4,6 +4,7 @@ extends Node2D
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	$VideoStreamPlayer/LongFootage.text = format_time(GetDeathTime.minutes,GetDeathTime.seconds,GetDeathTime.miliseconds)
 
 
 func _on_menu_button_pressed():
@@ -18,3 +19,9 @@ func _on_restart_button_pressed():
 
 func _on_restart_button_mouse_entered():
 	$RestartButton/AudioStreamPlayer2D.play()
+
+func format_time(minutes,seconds,miliseconds):
+	var minutes_str = "%02d" % minutes
+	var seconds_str = "%02d" % seconds 
+	var miliseconds_str = "%03d" % miliseconds
+	return minutes_str + ":" + seconds_str + ":" + miliseconds_str
