@@ -5,8 +5,8 @@ extends Node
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	var player = $Player
-	var label = get_node("Signal 1/SignalText/SubViewport/Label")
-	var label2 = get_node("Signal 5/SignalText/SubViewport/Label")
+	var label = get_node("Sprites/SignalHandler/Signal 1/SignalText/SubViewport/Label")
+	var label2 = get_node("Sprites/SignalHandler/Signal 5/SignalText/SubViewport/Label")
 	player.connect("change_miles",Callable(label,"_on_change_miles"))
 	player.connect("change_miles",Callable(label2,"_on_change_miles"))
 
