@@ -1,6 +1,7 @@
 extends StaticBody3D
 @onready var player = get_node("../Player")
 @onready var camera = player.get_node("PlayerCamera")
+@onready var shader_camera = $"../HUD/ColorRect"
 @onready var labelInfo = get_node("../HUD/InformativeEnemyText")
 
 
@@ -23,6 +24,7 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	var material = shader_camera.material
 	var playerPosition = player.global_transform.origin
 	timePassed += delta
 	
@@ -48,6 +50,7 @@ func _physics_process(delta):
 			print("Enemy kills the player")
 			get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 		elif timeNotLookedAt >= NOT_LOOK_THRESHOLD:
+			material.set_shader_parameter("tape_wave_amount", 0.003)
 			print("Enemy disappears because player did not look")
 			restore_vars()
 	
@@ -55,6 +58,8 @@ func _physics_process(delta):
 		if timePassed >= TIMEBETWEENSPAWNS:
 			print("Trying to spawn enemy in front...")
 			if RandomNumberGenerator.new().randf_range(0,100) < CHANCETOSPAWN:
+				if material is ShaderMaterial:
+					material.set_shader_parameter("tape_wave_amount", 0.025)
 				TIMEBETWEENSPAWNS = 8
 				CHANCETOSPAWN = 70
 				TIMEBETWEENSOUNDS = 2
@@ -73,6 +78,7 @@ func _physics_process(delta):
 			timePassed = 0.0
 	elif timePassed >= TIMEBETWEENSOUNDS and not enemyPaused:
 		timePassed = 0.0
+
 
 func restore_vars():
 	enemyPaused = false
