@@ -48,11 +48,15 @@ func _process(delta):
 		
 
 func _physics_process(delta):
-	
 	if Input.is_action_pressed("Sprint"):
+		if not $AgilitedSounds.playing:
+			$AgilitedSounds.play()
 		isSprint = true
 		speed = speedRun
 	else:
+		if $AgilitedSounds.playing:
+			$AgilitedSounds.stop()
+			$SemiAgilitedSounds.play()
 		isSprint = false
 		speed = speedWalk
 
