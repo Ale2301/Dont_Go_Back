@@ -10,6 +10,9 @@ func _process(delta) -> void:
 	msec = fmod(time, 1) * 100
 	seconds = fmod(time, 60)
 	minutes = fmod(time,3600) / 60
+	GetDeathTime.minutes = minutes
+	GetDeathTime.seconds = seconds
+	GetDeathTime.miliseconds = msec
 	$"PlayerHUD#Minutes".text = "%02d:" % minutes
 	$"PlayerHUD#Seconds".text = "%02d." % seconds
 	$"PlayerHUD#Mseconds".text = "%03d" % msec
