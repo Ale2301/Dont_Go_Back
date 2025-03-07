@@ -7,6 +7,7 @@ const PLAYER_AMP = 0.08
 var t_player = 0.0
 
 # How fast the player moves in meters per second.
+@onready var shader_camera = $"../HUD/ColorRect"
 @export var speed = 4.0 #Te ponen
 @export var gravity = 20
 @export var teleport_limit_x = 1.0
@@ -48,11 +49,15 @@ func _process(delta):
 		
 
 func _physics_process(delta):
-	
 	if Input.is_action_pressed("Sprint"):
+		if not $AgilitedSounds.playing:
+			$AgilitedSounds.play()
 		isSprint = true
 		speed = speedRun
 	else:
+		if $AgilitedSounds.playing:
+			$AgilitedSounds.stop()
+			$SemiAgilitedSounds.play()
 		isSprint = false
 		speed = speedWalk
 
@@ -85,10 +90,12 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	if global_transform.origin.x <= teleport_limit_x:
+		var material = shader_camera.material
 		global_transform.origin.x = teleport_target_x
 		emit_signal("change_miles", str(round(RandomNumberGenerator.new().randf_range(10,90))))
+		material.set_shader_parameter("tape_wave_amount", 0.015)
+		$Timer.start()
 
-
-
-
-
+func _on_timer_timeout():
+	var material = shader_camera.material
+	material.set_shader_parameter("tape_wave_amount", 0.003)
