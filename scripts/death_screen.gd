@@ -5,7 +5,8 @@ extends Node2D
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$VideoStreamPlayer/LongFootage.text = format_time(GetDeathTime.minutes,GetDeathTime.seconds,GetDeathTime.miliseconds)
-
+	$AudioStreamPlayer2D.play()
+	print("lo que sea")
 
 func _on_menu_button_pressed():
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")

@@ -32,7 +32,7 @@ func _physics_process(delta):
 	timePassed += 0.01
 	if (stalkerPaused):
 		if material is ShaderMaterial:
-			material.set_shader_parameter("tape_wave_amount", 0.030)
+			material.set_shader_parameter("tape_wave_amount", 0.010)
 		if not $"../Player/HearthSound".playing:
 			$"../Player/HearthSound".play()
 		if not $"WhispersSound".playing:
