@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://eiupietcoqw2"]
+
+[ext_resource type="Script" path="res://scripts/deathcinematic.gd" id="1_o6fm7"]
+[ext_resource type="VideoStream" path="res://cinematics/Death-Cinematic.ogv" id="1_qpq5u"]
+[ext_resource type="Shader" path="res://Shader/TV.gdshader" id="3_48lsk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnsae"]
+shader = ExtResource("3_48lsk")
+shader_parameter/vertJerkOpt = 1.0
+shader_parameter/vertMovementOpt = 0.281
+shader_parameter/bottomStaticOpt = 0.731
+shader_parameter/bottomStaticStrenth = 0.335
+shader_parameter/scalinesOpt = 0.472
+shader_parameter/rgbOffsetOpt = 0.2
+shader_parameter/horzFuzzOpt = 0.15
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_o6fm7")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.67, 0.67)
+stream = ExtResource("1_qpq5u")
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.9
+autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_hnsae")
+offset_right = 1282.0
+offset_bottom = 723.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

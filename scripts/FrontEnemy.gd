@@ -48,7 +48,7 @@ func _physics_process(delta):
 		
 		if enemyTimer <= 0:
 			print("Enemy kills the player")
-			get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
+			get_tree().change_scene_to_file("res://scenes/deathcinematic.tscn")
 		elif timeNotLookedAt >= NOT_LOOK_THRESHOLD:
 			material.set_shader_parameter("tape_wave_amount", 0.003)
 			print("Enemy disappears because player did not look")

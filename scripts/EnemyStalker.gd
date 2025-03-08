@@ -73,7 +73,7 @@ func _physics_process(delta):
 			restore_vars()
 		elif stalkerTimer <= 0:
 			print ("Stalker kills the player")
-			get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
+			get_tree().change_scene_to_file("res://scenes/deathcinematic.tscn")
 	if (not isSpawned):
 		if (timePassed > TIMEBETWEENSPAWNS):
 			timePassed = 0

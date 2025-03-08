@@ -55,7 +55,7 @@ func _physics_process(delta):
 			global_transform.origin = Vector3(9999,9999,0)
 			timePassed = 0.0
 	if global_transform.origin.distance_to(player.global_transform.origin) < COLLISION_THRESHOLD:
-		get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
+		get_tree().change_scene_to_file("res://scenes/deathcinematic.tscn")
 		
 	if isSpawned:
 		if distance < treshold:
