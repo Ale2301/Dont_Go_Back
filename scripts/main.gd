@@ -7,7 +7,7 @@ func _ready():
 	var label2 = get_node("Sprites/SignalHandler/Signal 5/SignalText/SubViewport/Label")
 	player.connect("change_miles",Callable(label,"_on_change_miles"))
 	player.connect("change_miles",Callable(label2,"_on_change_miles"))
-	$HUD/InformativeEnemyText.text = "My car is out of fuel. I should probbably walk to the next station"
+	$HUD/InformativeEnemyText.text = "My car is out of fuel. I should probably walk to the next station"
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):

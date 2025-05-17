@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://eiupietcoqw2"]
+[gd_scene load_steps=5 format=3 uid="uid://c0jmfcnthal5j"]
 
 [ext_resource type="Script" path="res://scripts/deathcinematic.gd" id="1_o6fm7"]
 [ext_resource type="VideoStream" path="res://cinematics/Death-Cinematic.ogv" id="1_qpq5u"]
