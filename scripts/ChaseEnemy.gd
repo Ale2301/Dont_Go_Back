@@ -47,7 +47,7 @@ func _physics_process(delta):
 		move_and_slide()
 		if not $ChaseEnemySteps.playing:
 			$ChaseEnemySteps.play()
-		if player.global_transform.origin.distance_to(spawn_position) >= ESCAPE_DISTANCE:
+		if (player.global_transform.origin.distance_to(spawn_position) >= ESCAPE_DISTANCE) || (player.global_transform.origin.x > global_transform.origin.x):
 			labelInfo.text = ""
 			print("Player escaped from ChaseEnemy")
 			material.set_shader_parameter("tape_wave_amount", 0.003)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt1cowoupf7pn"]
+[gd_scene load_steps=6 format=3 uid="uid://kqxwlvssi1c3"]
 
 [ext_resource type="Script" path="res://scripts/HowToPLay.gd" id="1_aoc4r"]
 [ext_resource type="Texture2D" uid="uid://dqsboctrv0lp2" path="res://Tutooo.png" id="2_clam1"]
